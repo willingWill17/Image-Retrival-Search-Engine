@@ -1,0 +1,67 @@
+.teamname {
+    color: #ff0000;
+    font-size: 30px;
+    float: left;
+    padding: 10px;
+  }
+  .large-placeholder {
+    width: 30%;
+    height: 50%;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+  }
+.sidebarGrid {
+    width: 310px; 
+    height: 100vh; 
+    overflow-y: scroll; 
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    left: 0; /* Align to the left side */
+    top: 0; /* Align to the top */
+    padding: 5px; /* Add some padding */
+    align-items: center; /* Center align the items */
+    border-right: 1px solid #ddd; /* Add a border to separate from the content */
+}
+  .font-objects{
+    color:#a41318;
+    font-size: 18px;
+  }
+  .font-tiny{
+    font-size:12px;
+  } 
+  .palette{
+    display: grid;
+    grid-template-columns: repeat(11,auto);
+    grid-gap:1px;
+  }
+  .palette img {
+    margin: auto;
+    width:24px;
+  }
+  #overlay0 {
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 2;
+    cursor: pointer;
+  }
+  .advanced {
+    display: none;
+  }
+  .scene0 {
+    color: #a41318;
+    border-color: #a41318;
+    border: 1px;
+    border-style: solid;
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 5px;
+  }
+  
+

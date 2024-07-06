@@ -3,64 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="css/queryByExample.css" />
+    <link rel="stylesheet" href="css/toggle.css" />
+    <script src="document.js"></script>
     <title>Stubborn_Strawberries</title>
-    <style>
-      .teamname {
-        color: #ff0000;
-        font-size: 30px;
-        float: left;
-        padding: 10px;
-      }
-      .large-placeholder {
-        width: 30%;
-        height: 50%;
-        padding: 20px;
-        margin: 20px;
-        border-radius: 10px;
-      }
-      .scrool-bar {
-        width: 100%;
-        height: 100%;
-        border: 1px solid gray;
-        overflow: auto;
-      }
-    </style>
-    <!-- <style>
-        .teamname {
-            color: #FF0000;
-            font-size: 30px;
-            float: left;
-        }
-
-        .large-placeholder {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            box-sizing: border-box;
-        }
-        .search-container {
-            margin-bottom: 20px;
-        }
-        .checkbox-container {
-            margin: 10px 0;
-        }
-        .objects-container {
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin: 10px 0;
-        }
-        .object-selection {
-            margin: 10px 0.
-        }
-        textarea {
-            width: 100%;
-            height: 50px;
-        }
-    </style> -->
   </head>
   <body>
     <header>
-      <h1 class="teamname">StubbornSStrawberries</h1>
+      <h1 class="teamname">StubbornStrawberries</h1>
     </header>
     <main>
       <form method="POST" action="/">
@@ -84,8 +37,8 @@
           <div class="sidebarGrid" id="searchSidebar" style="width: 310px">
             <div class="advanced" style="display: block">
               <div id="palette" class="palette">
-                <!-- <div>
-                  <img  
+                <div>
+                  <img
                     draggable="true"
                     ondragstart="drag(event)"
                     id="person"
@@ -480,14 +433,14 @@
                     src="palette/yellow.png"
                   />
                 </div>
-              </div> -->
+              </div>
               <div id="searchTab">
                 <div class="scene0" id="canvasTab">
                   <div class="">
                     <div id="description_objects0">
                       <div class="font-large font-bold">
-                        <i id="sceneDes0" class="fa fa-hourglass-start fa-1x">
-                          Objects &amp; colors of the scene</i
+                        <strong id="sceneDes0" class="font-objects">
+                          Objects &amp; colors of the scene</strong
                         >
                       </div>
                     </div>
@@ -518,7 +471,7 @@
                         >Disabled &nbsp;</label
                       >
                     </span>
-                    <span>
+                    <span class="font-tiny">
                       Objects in
                       <input
                         type="radio"
@@ -590,6 +543,7 @@
                               top: 0px;
                               touch-action: none;
                               user-select: none;
+                              cursor: default;
                             "
                           ></canvas>
                         </div>
@@ -943,21 +897,27 @@
           </div>
           <div class="contentGrid" id="content">
             <div id="loading-spinner">
-                <i class="fas fa-spinner fa-spin"></i>
-              </div>
+              <i class="fas fa-spinner fa-spin"></i>
+            </div>
             <div id="avsSelected" class="avsSelected">
-                <div id="avsTab" style="display: block;" class=""></div>
+              <div id="avsTab" style="display: block" class=""></div>
             </div>
             <div id="resGrid" class="resGrid">
-                <div id="results" class="resGrid2">
-                    <div id="imgGridResults" class="gridcontainer"></div>
-                </div>
-                <ol id="recordingsList"></ol>
+              <div id="results" class="resGrid2">
+                <div id="imgGridResults" class="gridcontainer"></div>
+              </div>
+              <ol id="recordingsList"></ol>
             </div>
           </div>
-          <div class="rightSidebarGrid" id="submitted_bar" style="display:none;">
-            <div style="color:green;"> Submitted: <b id="submitted_num" style="color: red;"></b></div>
-            <div id="avsSubmittedTab" style="display: block;"></div>
+          <div
+            class="rightSidebarGrid"
+            id="submitted_bar"
+            style="display: none"
+          >
+            <div style="color: green">
+              Submitted: <b id="submitted_num" style="color: red"></b>
+            </div>
+            <div id="avsSubmittedTab" style="display: block"></div>
           </div>
         </div>
       </form>
