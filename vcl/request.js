@@ -1,12 +1,10 @@
 function getData(form) {
     var formData = new FormData(form);
 
-    if(formData.get("canvas0") === 'enabled')
-        formData.set("canvas0", true);
-    if(formData.get("canvas1") === 'enabled')
-        formData.set("canvas1", true);
+    (formData.get("canvas0") === 'enabled') ? formData.set("canvas0", true) : formData.set("canvas0", false);
+    (formData.get("canvas1") === 'enabled') ? formData.set("canvas1", true) : formData.set("canvas1", false);
 
-    formData.delete("imgFile")
+    //formData.delete("imgFile")
 
     for (var pair of formData.entries()) {
         console.log(pair[0] + ": " + pair[1]);
@@ -17,7 +15,7 @@ function getData(form) {
 }
 
 function post(data) {
-    fetch('http://0.0.0.0:8000/', {
+    fetch('http://localhost:8000/', {
         method: 'POST',
         headers: {
             'accept': 'application/json',
@@ -25,8 +23,9 @@ function post(data) {
         },
         body: JSON.stringify(data)
     }).then(res => {
-        if(res.ok) {
+        if (res.ok) {
             console.log("SUCCESS");
+            res.json().then(response => console.log(response));
         } else {
             console.log("Not successful");
         }

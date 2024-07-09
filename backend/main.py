@@ -11,8 +11,13 @@ class Item(BaseModel):
     canvas1: bool
     occur1: str
     url: str | None=None
+    imageFile: list | None=None
 
-origins = ["http://0.0.0.0:3000"]
+class Result(Item):
+    results: str = "Lmao"
+
+origins = ["http://0.0.0.0:3000",
+           "http://localhost:3000"]
 
 app = FastAPI()
 
@@ -24,7 +29,6 @@ app.add_middleware(
         allow_headers=["*"],
 )
 
-
 @app.post("/")
-async def add_item(item: Item):
+async def post_item(item: Item):
     return item
