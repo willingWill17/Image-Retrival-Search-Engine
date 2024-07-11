@@ -2,7 +2,6 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 
-
 class Item(BaseModel):
     scene_description: str
     next_scene_description: str | None=None
@@ -16,8 +15,7 @@ class Item(BaseModel):
 class Result(Item):
     results: str = "Lmao"
 
-origins = ["http://0.0.0.0:3000",
-           "http://localhost:3000"]
+origins = ["http://localhost:8054"]
 
 app = FastAPI()
 
