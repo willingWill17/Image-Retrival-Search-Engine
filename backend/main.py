@@ -2,20 +2,19 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 
+class Query(BaseModel):
+    textual: str | None = None
+    objects: str | None = None
+    txt: str | None = None
+
 class Item(BaseModel):
-    scene_description: str
-    next_scene_description: str | None=None
-    canvas0: bool
-    occur0: str
-    canvas1: bool
-    occur1: str
-    url: str | None=None
-    imageFile: list | None=None
+    query: list[Query] | None = None
 
 class Result(Item):
     results: str = "Lmao"
 
-origins = ["http://localhost:8054"]
+origins = ["http://localhost:3031",
+           "http://0.0.0.0:3031"]
 
 app = FastAPI()
 
@@ -27,6 +26,6 @@ app.add_middleware(
         allow_headers=["*"],
 )
 
-@app.post("/")
+@app.post("/", response_model=Result)
 async def post_item(item: Item):
     return item
