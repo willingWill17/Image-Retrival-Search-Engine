@@ -1,226 +1,525 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- <link rel="stylesheet" href="css/bootstrap.css" /> -->
+    <link rel="stylesheet" href="css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="css/queryByExample.css" />
+    <link rel="stylesheet" href="css/toggle.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/bootstrap.css" />
-  <link rel="stylesheet" href="css/jquery-ui.min.css" />
-  <link rel="stylesheet" href="css/queryByExample.css" />
-  <link rel="stylesheet" href="css/toggle.css" />
+    <title>Stubborn_Strawberries</title>
+  </head>
 
-  <title>Stubborn_Strawberries</title>
-</head>
-
-<body>
-  <header>
-    <h1 class="teamname">StubbornStrawberries</h1>
-  </header>
-  <main>
-    <form id="request">
-      <div class="headerGrid">
-        <div class="search-container">
-          <input type="text" name="scene_description" class="large-placeholder"
-            placeholder="Describe the scene you are looking for..." />
-          <input type="text" name="next_scene_description" class="large-placeholder"
-            placeholder="Describe the next scene (optional)..." />
+  <body>
+    <header>
+      <h1 class="teamname">StubbornStrawberries</h1>
+    </header>
+    <main>
+      <form id="request">
+        <div class="headerGrid">
+          <div class="search-container">
+            <input
+              type="text"
+              name="scene_description"
+              class="large-placeholder"
+              placeholder="Describe the scene you are looking for..."
+            />
+            <input
+              type="text"
+              name="next_scene_description"
+              class="large-placeholder"
+              placeholder="Describe the next scene (optional)..."
+            />
+          </div>
         </div>
-      </div>
-      <div class="bodyGrid">
-        <div class="sidebarGrid" id="searchSidebar" style="width: 310px">
-          <div class="advanced" style="display: block">
-            <div id="palette" class="palette">
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="person" title="person" src="palette/person.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="man" title="man" src="palette/man.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="woman" title="woman" src="palette/woman.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="human_face" title="human_face"
-                  src="palette/humanface.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="musical_instrument" title="musical_instrument"
-                  src="palette/musical.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="sports_equipment" title="sports_equipment"
-                  src="palette/sports.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="skateboard" title="skateboard"
-                  src="palette/skateboard.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="glasses" title="glasses"
-                  src="palette/glasses.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="bicycle" title="bicycle"
-                  src="palette/bicycle.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="motorcycle" title="motorcycle"
-                  src="palette/motorcycle.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="car" title="car" src="palette/car.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="truck" title="truck" src="palette/truck.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="boat" title="boat" src="palette/boat.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="parachute" title="parachute"
-                  src="palette/parachute.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="airplane" title="airplane"
-                  src="palette/airplane.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="bench" title="bench" src="palette/bench.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="chair" title="chair" src="palette/chair.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="couch" title="couch" src="palette/sofa.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="building" title="building"
-                  src="palette/building.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="umbrella" title="umbrella"
-                  src="palette/umbrella.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="wine_glass" title="wine_glass"
-                  src="palette/wineglass.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="cup" title="cup" src="palette/cup.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="dessert" title="dessert"
-                  src="palette/dessert.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="cell_phone" title="cell_phone"
-                  src="palette/cellphone.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="television" title="television"
-                  src="palette/television.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="laptop_computer" title="laptop_computer"
-                  src="palette/laptop.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="book" title="book" src="palette/book.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="cat" title="cat" src="palette/cat.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="dog" title="dog" src="palette/dog.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="horse" title="horse" src="palette/horse.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="bird" title="bird" src="palette/bird.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="flower" title="flower" src="palette/flower.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="tree" title="tree" src="palette/tree.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="black" title="black" src="palette/black.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="blue" title="blue" src="palette/blue.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="brown" title="brown" src="palette/brown.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="green" title="green" src="palette/green.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="grey" title="grey" src="palette/grey.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="orange" title="orange" src="palette/orange.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="pink" title="pink" src="palette/pink.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="purple" title="purple" src="palette/purple.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="red" title="red" src="palette/red.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="white" title="white" src="palette/white.png" />
-              </div>
-              <div>
-                <img draggable="true" ondragstart="drag(event)" id="yellow" title="yellow" src="palette/yellow.png" />
-              </div>
-            </div>
-            <div id="searchTab">
-              <div class="scene0" id="canvasTab">
-                <div class="">
-                  <div id="description_objects0">
-                    <div class="font-large font-bold">
-                      <strong id="sceneDes0" class="font-objects">
-                        Objects &amp; colors of the scene</strong>
-                    </div>
-                  </div>
-                  <span class="font-tiny">
-                    <input type="radio" id="canvas0_enabled" name="canvas0" value="enabled" checked=""
-                      onchange="setCanvasState(0, this)" />
-                    <label for="canvas0_enabled" style="color: green; font-weight: bold">Enabled</label>
-                    <input type="radio" id="canvas0_disabled" name="canvas0" value="disabled"
-                      onchange="setCanvasState(0, this)" />
-                    <label for="canvas0_disabled" style="color: gray; font-weight: bold">Disabled &nbsp;</label>
-                  </span>
-                  <span class="font-tiny">
-                    Objects in
-                    <input type="radio" id="and0" name="occur0" value="and" checked="" onchange="setOccur(this, 0)" />
-                    <label for="and0">AND</label>
-                    <input type="radio" id="or0" name="occur0" value="or" onchange="setOccur(this, 0)" />
-                    <label for="or0">OR</label>
-                  </span>
+        <div class="bodyGrid">
+          <div class="sidebarGrid" id="searchSidebar" style="width: 310px">
+            <div class="advanced" style="display: block">
+              <div id="palette" class="palette">
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="person"
+                    title="person"
+                    src="palette/person.png"
+                  />
                 </div>
-
-                <div id="block0" style="position: relative; display: block">
-                  <div id="canvasBlock0" class="advanced" style="display: block">
-                    <div id="overlay0">
-                      <div align="center" id="text0" style="color: gray">
-                        Disabled
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="man"
+                    title="man"
+                    src="palette/man.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="woman"
+                    title="woman"
+                    src="palette/woman.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="human_face"
+                    title="human_face"
+                    src="palette/humanface.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="musical_instrument"
+                    title="musical_instrument"
+                    src="palette/musical.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="sports_equipment"
+                    title="sports_equipment"
+                    src="palette/sports.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="skateboard"
+                    title="skateboard"
+                    src="palette/skateboard.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="glasses"
+                    title="glasses"
+                    src="palette/glasses.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="bicycle"
+                    title="bicycle"
+                    src="palette/bicycle.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="motorcycle"
+                    title="motorcycle"
+                    src="palette/motorcycle.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="car"
+                    title="car"
+                    src="palette/car.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="truck"
+                    title="truck"
+                    src="palette/truck.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="boat"
+                    title="boat"
+                    src="palette/boat.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="parachute"
+                    title="parachute"
+                    src="palette/parachute.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="airplane"
+                    title="airplane"
+                    src="palette/airplane.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="bench"
+                    title="bench"
+                    src="palette/bench.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="chair"
+                    title="chair"
+                    src="palette/chair.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="couch"
+                    title="couch"
+                    src="palette/sofa.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="building"
+                    title="building"
+                    src="palette/building.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="umbrella"
+                    title="umbrella"
+                    src="palette/umbrella.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="wine_glass"
+                    title="wine_glass"
+                    src="palette/wineglass.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="cup"
+                    title="cup"
+                    src="palette/cup.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="dessert"
+                    title="dessert"
+                    src="palette/dessert.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="cell_phone"
+                    title="cell_phone"
+                    src="palette/cellphone.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="television"
+                    title="television"
+                    src="palette/television.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="laptop_computer"
+                    title="laptop_computer"
+                    src="palette/laptop.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="book"
+                    title="book"
+                    src="palette/book.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="cat"
+                    title="cat"
+                    src="palette/cat.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="dog"
+                    title="dog"
+                    src="palette/dog.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="horse"
+                    title="horse"
+                    src="palette/horse.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="bird"
+                    title="bird"
+                    src="palette/bird.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="flower"
+                    title="flower"
+                    src="palette/flower.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="tree"
+                    title="tree"
+                    src="palette/tree.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="black"
+                    title="black"
+                    src="palette/black.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="blue"
+                    title="blue"
+                    src="palette/blue.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="brown"
+                    title="brown"
+                    src="palette/brown.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="green"
+                    title="green"
+                    src="palette/green.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="grey"
+                    title="grey"
+                    src="palette/grey.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="orange"
+                    title="orange"
+                    src="palette/orange.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="pink"
+                    title="pink"
+                    src="palette/pink.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="purple"
+                    title="purple"
+                    src="palette/purple.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="red"
+                    title="red"
+                    src="palette/red.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="white"
+                    title="white"
+                    src="palette/white.png"
+                  />
+                </div>
+                <div>
+                  <img
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    id="yellow"
+                    title="yellow"
+                    src="palette/yellow.png"
+                  />
+                </div>
+              </div>
+              <div id="searchTab">
+                <div class="scene0" id="canvasTab">
+                  <div class="">
+                    <div id="description_objects0">
+                      <div class="font-large font-bold">
+                        <strong id="sceneDes0" class="font-objects">
+                          Objects &amp; colors of the scene</strong
+                        >
                       </div>
                     </div>
-                    <div id="canvasdiv1">
-                      <div class="canvas-container" style="
+                    <span class="font-tiny">
+                      <input
+                        type="radio"
+                        id="canvas0_enabled"
+                        name="canvas0"
+                        value="enabled"
+                        checked=""
+                        onchange="setCanvasState(0, this)"
+                      />
+                      <label
+                        for="canvas0_enabled"
+                        style="color: green; font-weight: bold"
+                        >Enabled</label
+                      >
+                      <input
+                        type="radio"
+                        id="canvas0_disabled"
+                        name="canvas0"
+                        value="disabled"
+                        onchange="setCanvasState(0, this)"
+                      />
+                      <label
+                        for="canvas0_disabled"
+                        style="color: gray; font-weight: bold"
+                        >Disabled &nbsp;</label
+                      >
+                    </span>
+                    <span class="font-tiny">
+                      Objects in
+                      <input
+                        type="radio"
+                        id="and0"
+                        name="occur0"
+                        value="and"
+                        checked=""
+                        onchange="setOccur(this, 0)"
+                      />
+                      <label for="and0">AND</label>
+                      <input
+                        type="radio"
+                        id="or0"
+                        name="occur0"
+                        value="or"
+                        onchange="setOccur(this, 0)"
+                      />
+                      <label for="or0">OR</label>
+                    </span>
+                  </div>
+
+                  <div id="block0" style="position: relative; display: block">
+                    <div
+                      id="canvasBlock0"
+                      class="advanced"
+                      style="display: block"
+                    >
+                      <div id="overlay0">
+                        <div align="center" id="text0" style="color: gray">
+                          Disabled
+                        </div>
+                      </div>
+                      <div id="canvasdiv1">
+                        <div
+                          class="canvas-container"
+                          style="
                             width: 275px;
                             height: 154px;
                             position: relative;
                             user-select: none;
-                          ">
-                        <canvas id="canvas0" width="343.75" height="192.5" style="
+                          "
+                        >
+                          <canvas
+                            id="canvas0"
+                            width="343.75"
+                            height="192.5"
+                            style="
                               border: 1px solid rgb(0, 0, 0);
                               position: absolute;
                               width: 275px;
@@ -229,8 +528,14 @@
                               top: 0px;
                               touch-action: none;
                               user-select: none;
-                            " class="lower-canvas"></canvas><canvas class="upper-canvas" width="275" height="154"
-                          style="
+                            "
+                            class="lower-canvas"
+                          ></canvas
+                          ><canvas
+                            class="upper-canvas"
+                            width="275"
+                            height="154"
+                            style="
                               border: 1px solid rgb(0, 0, 0);
                               position: absolute;
                               width: 275px;
@@ -240,91 +545,173 @@
                               touch-action: none;
                               user-select: none;
                               cursor: default;
-                            "></canvas>
+                            "
+                          ></canvas>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div colspan="13" title="Scene Description">
-                    <input id="annotations0" type="text" size="0" style="display: none" class="ui-autocomplete-input"
-                      autocomplete="off" />
-                  </div>
-                  <div class="advanced" colspan="13" title="Max Objects Number" style="display: block">
-                    <textarea id="not0" class="font-normal" cols="38" rows="2" style="width: 275px; border-radius: 6px"
-                      placeholder="Max Obj: e.g.: 2 person 3 car 0 dog, means at most 2 persons, 3 cars, no dogs"></textarea>
-                    <div id="textual0_container" colspan="12" title="Scene Description"></div>
-                  </div>
+                    <div colspan="13" title="Scene Description">
+                      <input
+                        id="annotations0"
+                        type="text"
+                        size="0"
+                        style="display: none"
+                        class="ui-autocomplete-input"
+                        autocomplete="off"
+                      />
+                    </div>
+                    <div
+                      class="advanced"
+                      colspan="13"
+                      title="Max Objects Number"
+                      style="display: block"
+                    >
+                      <textarea
+                        id="not0"
+                        class="font-normal"
+                        cols="38"
+                        rows="2"
+                        style="width: 275px; border-radius: 6px"
+                        placeholder="Max Obj: e.g.: 2 person 3 car 0 dog, means at most 2 persons, 3 cars, no dogs"
+                      ></textarea>
+                      <div
+                        id="textual0_container"
+                        colspan="12"
+                        title="Scene Description"
+                      ></div>
+                    </div>
 
-                  <div class="advanced" style="display: block">
-                    <div class="canvasClean">
-                      <div class="canvasCleanItem">
-                        <button id="clean0" class="btn btn-outline-danger btn-sm" title="clean canvas 1">
-                          <i class="fa fa-trash"></i>
-                        </button>
-                        <button id="undo0" class="btn btn-outline-success btn-sm" title="undo clean canvas 1">
-                          <i class="fa fa-undo"></i>
-                        </button>
-                      </div>
-                      <div class="canvasCleanItem" style="display: none">
-                        <div>
-                          <span title="Black &amp; White Keyframe">
-                            <input id="isGray0" type="checkbox" onchange="setGray(0)" />
-                          </span>
-                          <span title="Black &amp; White Keyframe">B/W</span>
+                    <div class="advanced" style="display: block">
+                      <div class="canvasClean">
+                        <div class="canvasCleanItem">
+                          <button
+                            id="clean0"
+                            class="btn btn-outline-danger btn-sm"
+                            title="clean canvas 1"
+                          >
+                            <i class="fa fa-trash"></i>
+                          </button>
+                          <button
+                            id="undo0"
+                            class="btn btn-outline-success btn-sm"
+                            title="undo clean canvas 1"
+                          >
+                            <i class="fa fa-undo"></i>
+                          </button>
                         </div>
-                        <div>
-                          <span title="Color Keyframe">
-                            <input id="isColor0" type="checkbox" onchange="setColor(0)" />
-                          </span>
-                          <span title="Color Keyframe" class="colorCheckbox">
-                            Color
-                          </span>
+                        <div class="canvasCleanItem" style="display: none">
+                          <div>
+                            <span title="Black &amp; White Keyframe">
+                              <input
+                                id="isGray0"
+                                type="checkbox"
+                                onchange="setGray(0)"
+                              />
+                            </span>
+                            <span title="Black &amp; White Keyframe">B/W</span>
+                          </div>
+                          <div>
+                            <span title="Color Keyframe">
+                              <input
+                                id="isColor0"
+                                type="checkbox"
+                                onchange="setColor(0)"
+                              />
+                            </span>
+                            <span title="Color Keyframe" class="colorCheckbox">
+                              Color
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="scene1" id="canvasTab">
-                <div class="">
-                  <div id="description_objects1">
-                    <div class="font-large font-bold">
-                      <i id="sceneDes1" class="fa fa-hourglass-end fa-1x">
-                        Objects &amp; color next scene</i>
-                    </div>
-                  </div>
-                  <span class="font-tiny">
-                    <input type="radio" id="canvas1_enabled" name="canvas1" value="enabled" checked=""
-                      onchange="setCanvasState(0, this)" />
-                    <label for="canvas1_enabled" style="color: green; font-weight: bold">Enabled</label>
-                    <input type="radio" id="canvas1_disabled" name="canvas1" value="disabled"
-                      onchange="setCanvasState(0, this)" />
-                    <label for="canvas1_disabled" style="color: gray; font-weight: bold">Disabled &nbsp;</label>
-                  </span>
-                  <span>
-                    Objects in
-                    <input type="radio" id="and1" name="occur1" value="and" checked="" onchange="setOccur(this, 1)" />
-                    <label for="and1">AND</label>
-                    <input type="radio" id="or1" name="occur1" value="or" onchange="setOccur(this, 1)" />
-                    <label for="or1">OR</label>
-                  </span>
-                </div>
-
-                <div id="block1" style="position: relative; display: block">
-                  <div id="canvasBlock1" class="advanced" style="display: block">
-                    <div id="overlay1">
-                      <div align="center" id="text1" style="color: gray">
-                        Disabled
+                <div class="scene1" id="canvasTab">
+                  <div class="">
+                    <div id="description_objects1">
+                      <div class="font-large font-bold">
+                        <i id="sceneDes1" class="fa fa-hourglass-end fa-1x">
+                          Objects &amp; color next scene</i
+                        >
                       </div>
                     </div>
-                    <div id="canvasdiv1">
-                      <div class="canvas-container" style="
+                    <span class="font-tiny">
+                      <input
+                        type="radio"
+                        id="canvas1_enabled"
+                        name="canvas1"
+                        value="enabled"
+                        checked=""
+                        onchange="setCanvasState(0, this)"
+                      />
+                      <label
+                        for="canvas1_enabled"
+                        style="color: green; font-weight: bold"
+                        >Enabled</label
+                      >
+                      <input
+                        type="radio"
+                        id="canvas1_disabled"
+                        name="canvas1"
+                        value="disabled"
+                        onchange="setCanvasState(0, this)"
+                      />
+                      <label
+                        for="canvas1_disabled"
+                        style="color: gray; font-weight: bold"
+                        >Disabled &nbsp;</label
+                      >
+                    </span>
+                    <span>
+                      Objects in
+                      <input
+                        type="radio"
+                        id="and1"
+                        name="occur1"
+                        value="and"
+                        checked=""
+                        onchange="setOccur(this, 1)"
+                      />
+                      <label for="and1">AND</label>
+                      <input
+                        type="radio"
+                        id="or1"
+                        name="occur1"
+                        value="or"
+                        onchange="setOccur(this, 1)"
+                      />
+                      <label for="or1">OR</label>
+                    </span>
+                  </div>
+
+                  <div id="block1" style="position: relative; display: block">
+                    <div
+                      id="canvasBlock1"
+                      class="advanced"
+                      style="display: block"
+                    >
+                      <div id="overlay1">
+                        <div align="center" id="text1" style="color: gray">
+                          Disabled
+                        </div>
+                      </div>
+                      <div id="canvasdiv1">
+                        <div
+                          class="canvas-container"
+                          style="
                             width: 275px;
                             height: 154px;
                             position: relative;
                             user-select: none;
-                          ">
-                        <canvas id="canvas1" width="343.75" height="192.5" style="
+                          "
+                        >
+                          <canvas
+                            id="canvas1"
+                            width="343.75"
+                            height="192.5"
+                            style="
                               border: 1px solid rgb(0, 0, 0);
                               position: absolute;
                               width: 275px;
@@ -333,8 +720,14 @@
                               top: 0px;
                               touch-action: none;
                               user-select: none;
-                            " class="lower-canvas"></canvas><canvas class="upper-canvas" width="275" height="154"
-                          style="
+                            "
+                            class="lower-canvas"
+                          ></canvas
+                          ><canvas
+                            class="upper-canvas"
+                            width="275"
+                            height="154"
+                            style="
                               border: 1px solid rgb(0, 0, 0);
                               position: absolute;
                               width: 275px;
@@ -343,44 +736,158 @@
                               top: 0px;
                               touch-action: none;
                               user-select: none;
-                            "></canvas>
+                            "
+                          ></canvas>
+                        </div>
+                      </div>
+                    </div>
+                    <div colspan="13" title="Scene Description">
+                      <input
+                        id="annotations1"
+                        type="text"
+                        size="0"
+                        style="display: none"
+                        class="ui-autocomplete-input"
+                        autocomplete="off"
+                      />
+                    </div>
+                    <div
+                      class="advanced"
+                      colspan="13"
+                      title="Max Objects Number"
+                      style="display: block"
+                    >
+                      <textarea
+                        id="not1"
+                        class="font-normal"
+                        cols="38"
+                        rows="2"
+                        style="width: 275px; border-radius: 6px"
+                        placeholder="Max Obj: e.g.: 2 person 3 car 0 dog, means at most 2 persons, 3 cars, no dogs"
+                      ></textarea>
+                      <div
+                        id="textual1_container"
+                        colspan="12"
+                        title="Scene Description"
+                      ></div>
+                    </div>
+
+                    <div class="advanced" style="display: block">
+                      <div class="canvasClean">
+                        <div class="canvasCleanItem">
+                          <button
+                            id="clean1"
+                            class="btn btn-outline-danger btn-sm"
+                            title="clean canvas 1"
+                          >
+                            <i class="fa fa-trash"></i>
+                          </button>
+                          <button
+                            id="undo1"
+                            class="btn btn-outline-success btn-sm"
+                            title="undo clean canvas 1"
+                          >
+                            <i class="fa fa-undo"></i>
+                          </button>
+                        </div>
+                        <div class="canvasCleanItem" style="display: none">
+                          <div>
+                            <span title="Black &amp; White Keyframe">
+                              <input
+                                id="isGray1"
+                                type="checkbox"
+                                onchange="setGray(1)"
+                              />
+                            </span>
+                            <span title="Black &amp; White Keyframe">B/W</span>
+                          </div>
+                          <div>
+                            <span title="Color Keyframe">
+                              <input
+                                id="isColor1"
+                                type="checkbox"
+                                onchange="setColor(1)"
+                              />
+                            </span>
+                            <span title="Color Keyframe" class="colorCheckbox">
+                              Color
+                            </span>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div colspan="13" title="Scene Description">
-                    <input id="annotations1" type="text" size="0" style="display: none" class="ui-autocomplete-input"
-                      autocomplete="off" />
-                  </div>
-                  <div class="advanced" colspan="13" title="Max Objects Number" style="display: block">
-                    <textarea id="not1" class="font-normal" cols="38" rows="2" style="width: 275px; border-radius: 6px"
-                      placeholder="Max Obj: e.g.: 2 person 3 car 0 dog, means at most 2 persons, 3 cars, no dogs"></textarea>
-                    <div id="textual1_container" colspan="12" title="Scene Description"></div>
-                  </div>
-
-                  <div class="advanced" style="display: block">
-                    <div class="canvasClean">
-                      <div class="canvasCleanItem">
-                        <button id="clean1" class="btn btn-outline-danger btn-sm" title="clean canvas 1">
-                          <i class="fa fa-trash"></i>
-                        </button>
-                        <button id="undo1" class="btn btn-outline-success btn-sm" title="undo clean canvas 1">
-                          <i class="fa fa-undo"></i>
-                        </button>
+                </div>
+              </div>
+              <div class="headerItem">
+                <div id="qbe" class="font-normal">
+                  <div id="filter" class="advanced" style="display: block">
+                    <div class="qbeGrid">
+                      <div class="qbeItem">
+                        <b id="urlText">Paste image URL</b>
+                        <a
+                          href="#"
+                          id="urlLink"
+                          onclick="changeQueryBySampleMod('url')"
+                          style="display: none"
+                          >Paste image URL</a
+                        >
                       </div>
-                      <div class="canvasCleanItem" style="display: none">
-                        <div>
-                          <span title="Black &amp; White Keyframe">
-                            <input id="isGray1" type="checkbox" onchange="setGray(1)" />
-                          </span>
-                          <span title="Black &amp; White Keyframe">B/W</span>
-                        </div>
-                        <div>
-                          <span title="Color Keyframe">
-                            <input id="isColor1" type="checkbox" onchange="setColor(1)" />
-                          </span>
-                          <span title="Color Keyframe" class="colorCheckbox">
-                            Color
-                          </span>
+                      <div class="qbeItem column-span-2">
+                        <b id="uploadText" style="display: none"
+                          >Upload an image</b
+                        >
+                        <a
+                          href="#"
+                          id="uploadLink"
+                          onclick="changeQueryBySampleMod('upload')"
+                          >Upload an image</a
+                        >
+                      </div>
+
+                      <div class="qbeItem column-span-2">
+                        <input type="hidden" value="" id="objId" />
+                        <input
+                          id="urlToUpload"
+                          name="url"
+                          type="text"
+                          size="34"
+                        />
+                        <input
+                          style="display: none"
+                          id="imageToUpload"
+                          name="imgFile"
+                          type="file"
+                          size="34"
+                        />
+                      </div>
+                      <div class="qbeItem column-span-1">
+                        <input
+                          type="image"
+                          src="img/Search.png"
+                          style="height: 20px"
+                          value="Search"
+                          id="queryByExample"
+                          title="Search"
+                          onclick="queryImg(); return false;"
+                        />
+                      </div>
+
+                      <div class="qbeItem column-span-3">
+                        <div
+                          class="preview"
+                          id="qbeblock"
+                          style="display: none; padding-top: 10px"
+                        >
+                          <img src="" id="qbeImg" width="100" />
+                          <img
+                            id="removeqbe"
+                            title="remove"
+                            width="16"
+                            style="vertical-align: top"
+                            src="img/Actions-dialog-close-icon.png"
+                            onclick="resetQueryImg()"
+                          />
                         </div>
                       </div>
                     </div>
@@ -388,69 +895,38 @@
                 </div>
               </div>
             </div>
-            <div class="headerItem">
-              <div id="qbe" class="font-normal">
-                <div id="filter" class="advanced" style="display: block">
-                  <div class="qbeGrid">
-                    <div class="qbeItem">
-                      <b id="urlText">Paste image URL</b>
-                      <a href="#" id="urlLink" onclick="changeQueryBySampleMod('url')" style="display: none">Paste image
-                        URL</a>
-                    </div>
-                    <div class="qbeItem column-span-2">
-                      <b id="uploadText" style="display: none">Upload an image</b>
-                      <a href="#" id="uploadLink" onclick="changeQueryBySampleMod('upload')">Upload an image</a>
-                    </div>
-
-                    <div class="qbeItem column-span-2">
-                      <input type="hidden" value="" id="objId" />
-                      <input id="urlToUpload" name="url" type="text" size="34" />
-                      <input style="display: none" id="imageToUpload" name="imgFile" type="file" size="34" />
-                    </div>
-                    <div class="qbeItem column-span-1">
-                      <input type="image" src="img/Search.png" style="height: 20px" value="Search" id="queryByExample"
-                        title="Search" onclick="queryImg(); return false;" />
-                    </div>
-
-                    <div class="qbeItem column-span-3">
-                      <div class="preview" id="qbeblock" style="display: none; padding-top: 10px">
-                        <img src="" id="qbeImg" width="100" />
-                        <img id="removeqbe" title="remove" width="16" style="vertical-align: top"
-                          src="img/Actions-dialog-close-icon.png" onclick="resetQueryImg()" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
+          </div>
+          <div class="contentGrid" id="content">
+            <div id="loading-spinner">
+              <i class="fas fa-spinner fa-spin"></i>
+            </div>
+            <div id="avsSelected" class="avsSelected">
+              <div id="avsTab" style="display: block" class=""></div>
+            </div>
+            <div id="resGrid" class="resGrid">
+              <div id="results" class="resGrid2">
+                <div id="imgGridResults" class="gridcontainer"></div>
               </div>
+              <ol id="recordingsList"></ol>
             </div>
           </div>
-        </div>
-        <div class="contentGrid" id="content">
-          <div id="loading-spinner">
-            <i class="fas fa-spinner fa-spin"></i>
-          </div>
-          <div id="avsSelected" class="avsSelected">
-            <div id="avsTab" style="display: block" class=""></div>
-          </div>
-          <div id="resGrid" class="resGrid">
-            <div id="results" class="resGrid2">
-              <div id="imgGridResults" class="gridcontainer"></div>
+          <div
+            class="rightSidebarGrid"
+            id="submitted_bar"
+            style="display: none"
+          >
+            <div style="color: green">
+              Submitted: <b id="submitted_num" style="color: red"></b>
             </div>
-            <ol id="recordingsList"></ol>
+            <div id="avsSubmittedTab" style="display: block"></div>
           </div>
         </div>
-        <div class="rightSidebarGrid" id="submitted_bar" style="display: none">
-          <div style="color: green">
-            Submitted: <b id="submitted_num" style="color: red"></b>
-          </div>
-          <div id="avsSubmittedTab" style="display: block"></div>
-        </div>
-      </div>
-    </form>
-  </main>
-</body>
-<script src="js/palette.js"></script>
-<script src="js/document.js" type="module"></script>
-<script src="js/request.js" type="module"></script>
+      </form>
+    </main>
+  </body>
+    <script src="js/debug.js"></script>
+  <script src="js/palette.js"></script>
 
+  <!-- <script src="js/document.js" type="module"></script> -->
+  <!-- <script src="js/request.js" type="module"></script> -->
 </html>
