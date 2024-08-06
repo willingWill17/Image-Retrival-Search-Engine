@@ -1,67 +1,180 @@
 .teamname {
-    color: #ff0000;
-    font-size: 30px;
-    float: left;
-    padding: 10px;
-  }
-  .large-placeholder {
-    width: 30%;
-    height: 50%;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
-  }
-.sidebarGrid {
-    width: 310px; 
-    height: 100vh; 
-    overflow-y: scroll; 
-    overflow-x: hidden; /* Hide horizontal scrollbar */
-    left: 0; /* Align to the left side */
-    top: 0; /* Align to the top */
-    padding: 5px; /* Add some padding */
-    align-items: center; /* Center align the items */
-    border-right: 1px solid #ddd; /* Add a border to separate from the content */
+  color: #ff0000;
+  font-size: 30px;
+  float: left;
+  padding: 10px;
 }
-  .font-objects{
-    color:#a41318;
-    font-size: 18px;
-  }
-  .font-tiny{
-    font-size:12px;
-  } 
-  .palette{
-    display: grid;
-    grid-template-columns: repeat(11,auto);
-    grid-gap:1px;
-  }
-  .palette img {
-    margin: auto;
-    width:24px;
-  }
-  #overlay0 {
-    position: absolute;
-    display: none;
-    width: 100%;
-    height: 100%;
-    top: 0%;
-    left: 0%;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(255, 255, 255, 0.5);
-    z-index: 2;
-    cursor: pointer;
-  }
-  .advanced {
-    display: none;
-  }
-  .scene0 {
-    color: #a41318;
-    border-color: #a41318;
-    border: 1px;
-    border-style: solid;
-    border-radius: 10px;
-    padding: 5px;
-    margin-top: 5px;
-  }
-  
 
+.large-placeholder {
+  width: 30%;
+  height: 50%;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.sidebarGrid {
+  width: 310px;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  left: 0; /* Align to the left side */
+  top: 0; /* Align to the top */
+  padding: 5px; /* Add some padding */
+  align-items: center; /* Center align the items */
+  border-right: 1px solid #ddd; /* Add a border to separate from the content */
+}
+.font-objects {
+  color: #a41318;
+  font-size: 18px;
+}
+.font-tiny {
+  font-size: 12px;
+}
+.palette {
+  display: grid;
+  grid-template-columns: repeat(11, auto);
+  grid-gap: 1px;
+}
+.palette img {
+  margin: auto;
+  width: 24px;
+}
+#overlay0 {
+  position: absolute;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+.advanced {
+  display: none;
+}
+.scene0 {
+  color: #a41318;
+  border-color: #a41318;
+  border: 1px;
+  border-style: solid;
+  border-radius: 10px;
+  padding: 5px;
+  margin-top: 5px;
+}
+element.style {
+  grid-template-columns: 1fr 4.2fr 0fr;
+}
+.bodyGrid {
+  display: grid;
+  grid-template-columns: 1fr 6fr 0.3fr;
+  overflow: hidden;
+}
+.gridcontainer {
+  display: grid;
+  grid-template-columns: repeat(11, auto);
+  grid-gap: 1px;
+}
+.contentGrid {
+  display: flex;
+  flex-direction: column;
+}
+
+.contentGrid > .result {
+  overflow: visible;
+  /* width: 100%; */
+
+  --gap: 0.5rem;
+  --num-cols: 4;
+  --row-height: 12vw;
+
+  box-sizing: border-box;
+  padding: var(--gap);
+
+  display: grid;
+  grid-template-columns: repeat(var(--num-cols), 1fr);
+  grid-auto-rows: var(--row-height);
+  grid-auto-flow: row;
+  gap: var(--gap);
+}
+
+.contentGrid{
+  width: 106%;
+}
+
+.result{
+  /* justify-content: center;
+  align-items: center;
+  display: flex; */
+  width: 100%;
+  height: 50%;
+  padding: 0;
+}
+
+.result a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  border: 1px solid black;
+}
+
+.result a {
+  transition: 0.1s all ease;
+  width: 105%;
+  height: 100%;
+}
+
+.result a:hover img{
+  transform: scale(1.07);
+}
+
+.result a p {
+  position: relative;
+  top: -15px;
+  font-size: 12px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  background: white;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  border: 1.5px solid black;
+  width: 107%;
+  height: 15%;
+  visibility: hidden;
+}
+
+.result a:hover p{
+  visibility: visible;
+}
+
+@media screen and (min-width: 768px) {
+  .contentGrid > .result {
+    --num-cols: 8;
+    --row-height: 12vw;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .contentGrid > .result {
+    --num-cols: 8;
+    --row-height: 8vw;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .contentGrid > .result {
+    --num-cols: 8;
+    --row-height: 6vw;
+  }
+}
+.hline_column {
+  height: 1px;
+  border-bottom: 7px solid rgb(75, 61, 61);
+  /* margin: 10px; */
+}

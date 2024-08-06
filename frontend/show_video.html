@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>FastAPI Video Streaming</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link href="https://vjs.zencdn.net/8.6.1/video-js.css" rel="stylesheet" />
+    <script src="https://vjs.zencdn.net/8.6.1/video.min.js"></script>
+    <style>
+      body {
+        background-color: #151515;
+        color: aliceblue;
+        font-family: "PT Serif", serif;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      #video-container {
+        position: relative;
+        width: 70%;
+        max-width: 100%;
+        height: 75vh;
+        margin: 0 auto;
+      }
+
+      #video-player {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <br /><br />
+    <h1>Stubborn_Strawberries</h1>
+    <div id="video-container">
+      <video
+        id="video-player"
+        class="video-js"
+        preload="none"
+        controls
+        muted="muted"
+        style="
+          position: relative;
+          margin-left: auto;
+          margin-right: auto;
+          display: block;
+        "
+        poster=""
+        data-setup='{
+             "playbackRates": [1, 1.25, 1.5, 2, 5],
+             "controlBar": {
+               "skipButtons": {
+                 "backward": 10,
+                 "forward": 10
+               }
+             }
+           }'
+      >
+        <source id="video-source" type="video/mp4" src="" />
+      </video>
+    </div>
+    <script>
+      // Function to get URL parameters
+      function getParameterByName(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        console.log(`URL parameters: ${window.location.search}`);
+        return urlParams.get(name);
+      }
+
+      function getTimeFromIndex(frameIdx) {
+        const fps = 25;
+        return frameIdx / fps - 0.2;
+      }
+
+      // Get the video path and frame index from the URL parameters
+      const videoPath = getParameterByName("videoPath");
+      const frameIdx = getParameterByName("frameIdx");
+      console.log(`videoPath: ${videoPath}`); // Log the videoPath
+      console.log(`frameIdx: ${frameIdx}`);
+      // Set the video source and current time if the path is available
+      if (videoPath) {
+        const videoElement = document.getElementById("video-player");
+        const sourceElement = document.getElementById("video-source");
+
+        sourceElement.src = videoPath;
+        videoElement.load(); // Reload the video element with the new source
+
+        videoElement.addEventListener("loadedmetadata", function () {
+          // Convert frameIdx to integer and calculate the seek time
+          const seekTime = getTimeFromIndex(frameIdx);
+          if (seekTime >= 0 && seekTime <= videoElement.duration) {
+            videoElement.currentTime = seekTime;
+          } else {
+            console.error("Calculated time is out of bounds");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

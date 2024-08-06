@@ -1,4 +1,3 @@
-// Add dragstart event listeners to palettes
 
 function allowDrop(ev) {
     ev.preventDefault();
@@ -14,4 +13,3 @@ function drop(ev) {
     ev.target.appendChild(document.getElementById(data));
     console.log()
 }
-
