@@ -14,9 +14,9 @@
 }
 
 .sidebarGrid {
+  position: fixed;
   width: 310px;
-  height: 100vh;
-  overflow-y: scroll;
+  height: 800px;
   overflow-x: hidden; /* Hide horizontal scrollbar */
   left: 0; /* Align to the left side */
   top: 0; /* Align to the top */
