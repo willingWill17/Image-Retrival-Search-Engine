@@ -14,9 +14,9 @@
 }
 
 .sidebarGrid {
-  position: fixed;
   width: 310px;
   height: 800px;
+  overflow-y: auto;
   overflow-x: hidden; /* Hide horizontal scrollbar */
   left: 0; /* Align to the left side */
   top: 0; /* Align to the top */
@@ -24,7 +24,7 @@
   align-items: center; /* Center align the items */
   border-right: 1px solid #ddd; /* Add a border to separate from the content */
 }
-.font-objects {
+/* .font-objects {
   color: #a41318;
   font-size: 18px;
 }
@@ -39,7 +39,7 @@
 .palette img {
   margin: auto;
   width: 24px;
-}
+} */
 #overlay0 {
   position: absolute;
   display: none;
@@ -79,8 +79,11 @@ element.style {
   grid-gap: 1px;
 }
 .contentGrid {
+  position: relative;
   display: flex;
   flex-direction: column;
+  top: -12px;
+  width: 106%;
 }
 
 .contentGrid > .result {
@@ -101,20 +104,16 @@ element.style {
   gap: var(--gap);
 }
 
-.contentGrid{
-  width: 106%;
-}
 
-.result{
+.result {
   /* justify-content: center;
   align-items: center;
   display: flex; */
   width: 100%;
-  height: 50%;
-  padding: 0;
 }
 
 .result a img {
+  cursor: pointer;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -125,10 +124,10 @@ element.style {
 .result a {
   transition: 0.1s all ease;
   width: 105%;
-  height: 100%;
+  height: 107%;
 }
 
-.result a:hover img{
+.result a:hover img {
   transform: scale(1.07);
 }
 
@@ -149,8 +148,47 @@ element.style {
   visibility: hidden;
 }
 
-.result a:hover p{
+.result a:hover p {
   visibility: visible;
+}
+
+.result-mode{
+  background-color: #FC7F80;
+  height: 40px;
+  width: 310px;
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.result-mode .buttonToggle{
+  cursor: pointer;
+  background: white;
+  width: 48px;
+  height: 28px;
+  border-radius: 14px;
+  transition: 0.4s all ease;
+}
+
+.buttonToggle .circle {
+  margin-top: -1px;
+  transform: translateX(14px);
+  background: #FC7F80;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  transition: 0.4s all ease;
+}
+
+.result-mode p{
+  margin: 20px;
+  text-align: center;
+  font-weight: bold;
+  background-color: white;
+  border-radius: 10px;
+  padding: 5px;
 }
 
 @media screen and (min-width: 768px) {
@@ -174,7 +212,16 @@ element.style {
   }
 }
 .hline_column {
-  height: 1px;
-  border-bottom: 7px solid rgb(75, 61, 61);
-  /* margin: 10px; */
+  border-bottom: 4px solid red;
+}
+
+
+.video-container{
+  width: 100%;
+  height: 100%;
+}
+
+.video-container video{
+  width: 100%;
+  height: 100%;
 }

@@ -15,9 +15,11 @@ def init_beit(weight_path):
 
 
 connections.connect(uri='http://milvus-standalone:19530')
-collection = Collection("beit1")
+collection = Collection("beit3")
 collection.flush()
 collection.load()
 weight_path = '/mlcv2/WorkingSpace/Personal/longlb/AIC_2024/demo_system/models/beit3_large_patch16_384_f30k_retrieval.pth'
+#weight_path = '/mlcv2/WorkingSpace/Personal/longlb/AIC_2024/demo_system/models/beit3_large_patch16_384_coco_retrieval.pth'
 model = init_beit(weight_path)
 tokenizer = XLMRobertaTokenizer("/mlcv2/WorkingSpace/Personal/longlb/AIC_2024/demo_system/models/beit3.spm")
+ 

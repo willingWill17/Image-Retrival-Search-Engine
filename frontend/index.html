@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="pragma" content="no-cache" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
@@ -23,22 +26,7 @@
   </head>
 
   <body>
-    <!-- Modal -->
-    <div
-      class="modal"
-      id="gallery-modal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-          <div class="modal-body"></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Off canvas -->
+    <!-- Offcanvas -->
     <div
       class="offcanvas offcanvas-bottom"
       tabindex="-1"
@@ -49,27 +37,82 @@
         <h5 class="offcanvas-title" id="offcanvasBottomLabel">
           Offcanvas bottom
         </h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="offcanvas"
-          aria-label="Close"
-        ></button>
       </div>
       <div class="offcanvas-body small">
-        <!-- Carousel-->
-        <div
-          id="carouselExample"
-          class="carousel"
-          data-bs-theme="dark"
-          aria-hidden="true"
-          tabindex="-1"
-        >
-          <div class="carousel-inner"></div>
+        <!-- Carousel -->
+        <div id="carouselExampleControls" class="carousel">
+          <div class="carousel-inner" id="carousel-inner">
+            <div class="carousel-item active">
+              <div class="card">
+                <div class="img-wrapper">
+                  <img
+                    src="C:\Users\GenyoNguyen\Downloads\0001.jpg"
+                    class="d-block w-100 target-img"
+                    alt="..."
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="card">
+                <div class="img-wrapper">
+                  <img
+                    src="C:\Users\GenyoNguyen\Downloads\cannon-in-pixel-art-style-vector.jpg"
+                    class="d-block w-100 target-img"
+                    alt="..."
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="card">
+                <div class="img-wrapper">
+                  <img
+                    src="C:\Users\GenyoNguyen\Downloads\0001.jpg"
+                    class="d-block w-100 target-img"
+                    alt="..."
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="card">
+                <div class="img-wrapper">
+                  <img
+                    src="C:\Users\GenyoNguyen\Downloads\cannon-in-pixel-art-style-vector.jpg"
+                    class="d-block w-100 target-img"
+                    alt="..."
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="card">
+                <div class="img-wrapper">
+                  <img
+                    src="C:\Users\GenyoNguyen\Downloads\0001.jpg"
+                    class="d-block w-100 target-img"
+                    alt="..."
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="card">
+                <div class="img-wrapper">
+                  <img
+                    src="C:\Users\GenyoNguyen\Downloads\cannon-in-pixel-art-style-vector.jpg"
+                    class="d-block w-100 target-img"
+                    alt="..."
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
           <button
             class="carousel-control-prev"
             type="button"
-            data-bs-target="#carouselExample"
+            data-bs-target="#carouselExampleControls"
             data-bs-slide="prev"
           >
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -78,421 +121,53 @@
           <button
             class="carousel-control-next"
             type="button"
-            data-bs-target="#carouselExample"
+            data-bs-target="#carouselExampleControls"
             data-bs-slide="next"
           >
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
         </div>
+        <!-------------------------------------End of Carousel-------------------------------------->
       </div>
     </div>
+    <!-------------------------------------End of Offcanvas-------------------------------------->
+
+    <!-- Modal -->
+    <div
+      class="modal"
+      id="gallery-modal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+      data-bs-backdrop="false"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-body">
+            <img
+              src="C:\Users\GenyoNguyen\Downloads\0001.jpg"
+              class="modal-img"
+              id="modal-img"
+              alt="modal img"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-------------------------------------End of Modal-------------------------------------->
     <main>
+      <div class="result-mode">
+        <button class="buttonToggle">
+          <div class="circle"></div>
+        </button>
+        <p>Video Group Search</p>
+      </div>
+
       <form id="request">
         <div class="bodyGrid">
           <div class="sidebarGrid" id="searchSidebar" style="width: 310px">
             <div class="advanced" style="display: block">
-              <div id="palette" class="palette">
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="person"
-                    title="person"
-                    src="palette/person.png"
-                  />
-                </div>
-
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="man"
-                    title="man"
-                    src="palette/man.png"
-                  />
-                </div>
-
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="woman"
-                    title="woman"
-                    src="palette/woman.png"
-                  />
-                </div>
-
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="human_face"
-                    title="human_face"
-                    src="palette/humanface.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="musical_instrument"
-                    title="musical_instrument"
-                    src="palette/musical.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="sports_equipment"
-                    title="sports_equipment"
-                    src="palette/sports.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="skateboard"
-                    title="skateboard"
-                    src="palette/skateboard.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="glasses"
-                    title="glasses"
-                    src="palette/glasses.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="bicycle"
-                    title="bicycle"
-                    src="palette/bicycle.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="motorcycle"
-                    title="motorcycle"
-                    src="palette/motorcycle.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="car"
-                    title="car"
-                    src="palette/car.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="truck"
-                    title="truck"
-                    src="palette/truck.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="boat"
-                    title="boat"
-                    src="palette/boat.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="parachute"
-                    title="parachute"
-                    src="palette/parachute.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="airplane"
-                    title="airplane"
-                    src="palette/airplane.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="bench"
-                    title="bench"
-                    src="palette/bench.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="chair"
-                    title="chair"
-                    src="palette/chair.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="couch"
-                    title="couch"
-                    src="palette/sofa.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="building"
-                    title="building"
-                    src="palette/building.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="umbrella"
-                    title="umbrella"
-                    src="palette/umbrella.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="wine_glass"
-                    title="wine_glass"
-                    src="palette/wineglass.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="cup"
-                    title="cup"
-                    src="palette/cup.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="dessert"
-                    title="dessert"
-                    src="palette/dessert.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="cell_phone"
-                    title="cell_phone"
-                    src="palette/cellphone.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="television"
-                    title="television"
-                    src="palette/television.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="laptop_computer"
-                    title="laptop_computer"
-                    src="palette/laptop.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="book"
-                    title="book"
-                    src="palette/book.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="cat"
-                    title="cat"
-                    src="palette/cat.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="dog"
-                    title="dog"
-                    src="palette/dog.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="horse"
-                    title="horse"
-                    src="palette/horse.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="bird"
-                    title="bird"
-                    src="palette/bird.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="flower"
-                    title="flower"
-                    src="palette/flower.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="tree"
-                    title="tree"
-                    src="palette/tree.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="black"
-                    title="black"
-                    src="palette/black.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="blue"
-                    title="blue"
-                    src="palette/blue.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="brown"
-                    title="brown"
-                    src="palette/brown.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="green"
-                    title="green"
-                    src="palette/green.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="grey"
-                    title="grey"
-                    src="palette/grey.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="orange"
-                    title="orange"
-                    src="palette/orange.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="pink"
-                    title="pink"
-                    src="palette/pink.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="purple"
-                    title="purple"
-                    src="palette/purple.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="red"
-                    title="red"
-                    src="palette/red.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="white"
-                    title="white"
-                    src="palette/white.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    draggable="true"
-                    ondragstart="drag(event)"
-                    id="yellow"
-                    title="yellow"
-                    src="palette/yellow.png"
-                  />
-                </div>
-              </div>
               <div id="searchTab">
                 <div class="scene0" id="canvasTab">
                   <div class="">
@@ -552,44 +227,44 @@
                     </span>
                   </div>
                   <div id="block0" style="position: relative; display: block">
-                  <div id="overlay0">
-                    <div align="center" id="text0" style="color: gray">
-                      Disabled
+                    <div id="overlay0">
+                      <div align="center" id="text0" style="color: gray">
+                        Disabled
+                      </div>
                     </div>
-                  </div>
-                  <div id="inputdiv0">
-                    <div
-                      class="input-container"
-                      style="
-                        width: 275px;
-                        height: 154px;
-                        position: relative;
-                        user-select: none;
-                      "
-                    >
-                      <textarea
-                        id="inputBlock0"
-                        name="scene_description"
+                    <div id="inputdiv0">
+                      <div
+                        class="input-container"
                         style="
-                          border: 1px solid rgb(0, 0, 0);
                           width: 275px;
                           height: 154px;
-                          box-sizing: border-box;
-                          position: absolute;
-                          left: 0px;
-                          top: 0px;
-                          touch-action: none;
-                          user-select: text;
-                          font-size: 14px;
-                          padding: 5px;
-                          overflow: auto;
-                          resize: none; /* Prevent resizing */
+                          position: relative;
+                          user-select: none;
                         "
-                        autofocus
-                      ></textarea>
+                      >
+                        <textarea
+                          id="inputBlock0"
+                          name="scene_description"
+                          style="
+                            border: 1px solid rgb(0, 0, 0);
+                            width: 275px;
+                            height: 154px;
+                            box-sizing: border-box;
+                            position: absolute;
+                            left: 0px;
+                            top: 0px;
+                            touch-action: none;
+                            user-select: text;
+                            font-size: 14px;
+                            padding: 5px;
+                            overflow: auto;
+                            resize: none; /* Prevent resizing */
+                          "
+                          autofocus
+                        ></textarea>
+                      </div>
                     </div>
                   </div>
-                </div>
                   <div colspan="13" title="Scene Description">
                     <input
                       id="annotations0"
@@ -850,7 +525,11 @@
               </div>
             </div>
           </div>
-          <div class="contentGrid" id="content" style="height: calc(100% + 0px)"></div> 
+          <div
+            class="contentGrid"
+            id="content"
+            style="height: calc(100% + 0px)"
+          ></div>
           <div
             class="rightSidebarGrid"
             id="submitted_bar"
@@ -864,6 +543,16 @@
         </div>
       </form>
     </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "`") {
+            window.location.reload(true);
+          }
+        });
+      });
+    </script>
     <script src="js/palette.js"></script>
     <script src="js/document.js" type="module"></script>
 
@@ -877,7 +566,10 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <link href="https://vjs.zencdn.net/8.6.1/video-js.css" rel="stylesheet" />
+    <script src="https://vjs.zencdn.net/8.6.1/video.min.js"></script>
     <script src="js/request.js" type="module"></script>
     <script src="js/carousel.js"></script>
+    <script src="js/event_listener.js"></script>
   </body>
 </html>

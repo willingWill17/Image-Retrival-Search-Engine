@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>FastAPI Video Streaming</title>
+    <title>Video Streaming</title>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link href="https://vjs.zencdn.net/8.6.1/video-js.css" rel="stylesheet" />
     <script src="https://vjs.zencdn.net/8.6.1/video.min.js"></script>
@@ -25,7 +25,8 @@
 
       #video-container {
         position: relative;
-        width: 70%;
+        width: 100%;
+        height: 100%;
         max-width: 100%;
         height: 75vh;
         margin: 0 auto;
@@ -42,7 +43,6 @@
 
   <body>
     <br /><br />
-    <h1>Stubborn_Strawberries</h1>
     <div id="video-container">
       <video
         id="video-player"
@@ -94,7 +94,12 @@
         const sourceElement = document.getElementById("video-source");
 
         sourceElement.src = videoPath;
-        videoElement.load(); // Reload the video element with the new source
+        videoElement.load(); 
+
+        const player = videojs('video-player');
+        player.ready(function() {
+          player.play();
+        });
 
         videoElement.addEventListener("loadedmetadata", function () {
           // Convert frameIdx to integer and calculate the seek time
@@ -104,7 +109,40 @@
           } else {
             console.error("Calculated time is out of bounds");
           }
+
+          videoElement.play();
         });
+
+        document.addEventListener('keydown', function(event) {
+          const time_lapse = 2;
+          event.preventDefault();
+          if (event.key === 'ArrowRight') {
+            videoElement.currentTime = Math.min(videoElement.currentTime + time_lapse, videoElement.duration);
+          } else if (event.key === 'ArrowLeft') {
+            videoElement.currentTime = Math.max(videoElement.currentTime - time_lapse, 0);
+          }
+        });
+
+        let pause = 0;
+
+        document.addEventListener('keydown', function(event) {
+          if (event.key === " " || event.code === 'Space') {
+              if(pause === 0) {
+                pause = 1;
+                videoElement.pause();
+              }
+              else{
+                pause = 0;
+                videoElement.play();
+              }
+          }
+        });
+
+        document.addEventListener('keydown', function(event){
+          if(event.keyCode === 27){
+            window.close();
+          }
+        })
       }
     </script>
   </body>

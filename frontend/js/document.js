@@ -1,4 +1,5 @@
-import { post } from "./request.js";
+import { post, VideoGroupSearch, SimilaritySearch, currentResult } from "./request.js";
+import "./request.js";
 let canvasBlock0 = document.getElementById("canvasBlock0");
 
 let query0 = "";
@@ -266,3 +267,53 @@ document.getElementById("request").addEventListener("keydown", function (e) {
         })();
     }
   });
+
+export let currentMode = 'video group';
+export let toggle = document.querySelector('.buttonToggle');
+export let circle = document.querySelector('.circle');
+export let bg = document.querySelector('.result-mode');
+export let mode = document.querySelector('.result-mode p');
+export let contentGrid = document.querySelector('.contentGrid');
+
+toggle.addEventListener("click", function() {
+
+  if (currentMode === 'video group') {
+    circle.style.transform = 'translateX(-6px)';
+    circle.style.background = '#82EA9E';
+    currentMode = 'similarity search'; 
+    bg.style.background = '#82EA9E';
+    mode.innerHTML = 'Similarity Search';
+    
+
+  } else if (currentMode === 'similarity search') {
+    circle.style.transform = 'translateX(14px)';
+    circle.style.background = '#FC7F80';
+    currentMode = 'video group'; 
+    bg.style.background = '#FC7F80';
+    mode.innerHTML = 'Video Group Search';
+  }
+
+  if(currentResult.length != 0){
+    if(currentMode === 'similarity search'){
+      contentGrid.innerHTML = '';
+      SimilaritySearch();
+    }
+    else {
+      contentGrid.innerHTML = '';
+      VideoGroupSearch();
+    }
+  }
+  else  {
+    (async function () {
+      try {
+        const data = await getData();
+        console.log(data);
+        post(data);
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    })();
+  }
+});
+
+  

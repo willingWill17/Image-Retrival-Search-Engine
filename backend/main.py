@@ -61,7 +61,7 @@ async def post_item(items: Item):
             "objects": item.objects,
             "txt": item.txt,
         }
-        print(query)
+        # print(query)
         path, frame_idx = result(query)
         
     return {"path": path,
