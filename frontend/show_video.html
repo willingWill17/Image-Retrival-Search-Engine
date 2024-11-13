@@ -1,149 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Video Streaming</title>
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="https://vjs.zencdn.net/8.6.1/video-js.css" rel="stylesheet" />
-    <script src="https://vjs.zencdn.net/8.6.1/video.min.js"></script>
-    <style>
-      body {
-        background-color: #151515;
-        color: aliceblue;
-        font-family: "PT Serif", serif;
-      }
 
-      h1 {
-        text-align: center;
-      }
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Video Streaming</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link href="https://vjs.zencdn.net/8.6.1/video-js.css" rel="stylesheet" />
+  <script src="https://vjs.zencdn.net/8.6.1/video.min.js"></script>
+  <style>
+    body {
+      background-color: #151515;
+      color: aliceblue;
+      font-family: "PT Serif", serif;
+    }
 
-      body {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+    h1 {
+      text-align: center;
+    }
 
-      #video-container {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        max-width: 100%;
-        height: 75vh;
-        margin: 0 auto;
-      }
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-      #video-player {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        display: block;
-      }
-    </style>
-  </head>
+    #video-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+      height: 75vh;
+      margin: 0 auto;
+    }
 
-  <body>
-    <br /><br />
-    <div id="video-container">
-      <video
-        id="video-player"
-        class="video-js"
-        preload="none"
-        controls
-        muted="muted"
-        style="
+    #video-player {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <br /><br />
+  <div id="video-container">
+    <video id="video-player" class="video-js" preload="none" controls autoplay style="
           position: relative;
           margin-left: auto;
           margin-right: auto;
           display: block;
-        "
-        poster=""
-        data-setup='{
-             "playbackRates": [1, 1.25, 1.5, 2, 5],
+        " poster="" data-setup='{
+             "playbackRates": [1, 1.25, 1.5, 1.75, 2, 5],
              "controlBar": {
                "skipButtons": {
                  "backward": 10,
                  "forward": 10
                }
              }
-           }'
-      >
-        <source id="video-source" type="video/mp4" src="" />
-      </video>
-    </div>
-    <script>
-      // Function to get URL parameters
-      function getParameterByName(name) {
-        const urlParams = new URLSearchParams(window.location.search);
-        console.log(`URL parameters: ${window.location.search}`);
-        return urlParams.get(name);
+           }'>
+      <source id="video-source" type="application/x-mpegURL" src="" />
+    </video>
+  </div>
+  <script>
+    const fps30Files = ['L06_V003', 'L09_V009', 'L15_V003', 'L15_V004', 'L15_V005', 'L15_V008',
+     'L15_V009', 'L15_V010', 'L15_V011', 'L15_V012', 'L15_V015', 'L15_V016', 'L15_V017', 'L15_V018',
+      'L15_V019', 'L15_V022', 'L15_V023', 'L15_V024', 'L15_V025', 'L15_V028', 'L15_V029', 'L15_V030',
+       'L16_V001', 'L16_V002', 'L16_V003', 'L16_V006', 'L16_V007', 'L16_V008', 'L16_V009', 'L16_V012',
+        'L16_V013', 'L16_V014', 'L16_V015', 'L16_V016', 'L16_V019', 'L16_V020', 'L16_V021', 'L16_V022',
+        'L16_V023', 'L16_V026', 'L16_V027', 'L16_V028', 'L16_V029', 'L17_V003', 'L17_V004', 'L17_V005',
+        'L17_V006', 'L17_V007', 'L17_V010', 'L17_V011', 'L17_V012', 'L17_V013', 'L17_V014', 'L17_V017', 
+        'L17_V018', 'L17_V019', 'L17_V020', 'L17_V021', 'L17_V024', 'L17_V025', 'L17_V026', 'L17_V027', 
+        'L17_V028', 'L18_V002', 'L18_V003', 'L18_V004', 'L18_V005', 'L18_V006', 'L18_V009', 'L18_V010', 
+        'L18_V011', 'L18_V012', 'L18_V013', 'L18_V016', 'L18_V017', 'L18_V018', 'L18_V019', 'L18_V020', 
+        'L18_V023', 'L18_V024', 'L18_V025', 'L18_V026', 'L18_V027', 'L19_V001', 'L19_V003', 'L19_V004', 
+        'L19_V005', 'L19_V007', 'L19_V008', 'L19_V009', 'L19_V010', 'L19_V011', 'L19_V012', 'L19_V015', 
+        'L19_V016', 'L19_V017', 'L19_V018', 'L19_V019', 'L19_V022', 'L19_V023', 'L19_V024', 'L19_V025', 
+        'L19_V026', 'L19_V029', 'L19_V030', 'L19_V031', 'L20_V001', 'L20_V002', 'L20_V003', 'L20_V004', 
+        'L20_V007', 'L20_V008', 'L20_V009', 'L20_V010', 'L20_V011', 'L20_V014', 'L20_V015', 'L20_V016', 
+        'L20_V017', 'L20_V018', 'L20_V021', 'L20_V022', 'L20_V024', 'L20_V025', 'L20_V028', 'L20_V029', 
+        'L20_V030', 'L20_V031', 'L21_V001', 'L21_V002', 'L21_V005', 'L21_V006', 'L21_V007', 'L21_V012', 
+        'L21_V013', 'L21_V014', 'L21_V015', 'L21_V016', 'L21_V019', 'L21_V021', 'L21_V022', 'L21_V023', 
+        'L21_V026', 'L21_V027', 'L21_V028', 'L21_V029', 'L21_V030', 'L22_V001', 'L22_V004', 'L22_V005', 
+        'L22_V006', 'L22_V011', 'L22_V012', 'L22_V013', 'L22_V014', 'L22_V015', 'L22_V018', 'L22_V019', 
+        'L22_V020', 'L22_V021', 'L22_V022', 'L22_V025', 'L22_V026', 'L22_V027', 'L22_V028', 'L22_V029', 
+        'L24_V017', 'L24_V019', 'L24_V020', 'L24_V021', 'L24_V022', 'L24_V023', 'L24_V024', 'L24_V025', 
+        'L24_V027', 'L24_V028', 'L24_V029', 'L24_V030', 'L24_V031', 'L24_V033', 'L24_V035', 'L24_V036', 
+        'L24_V037', 'L24_V038', 'L24_V039', 'L24_V040', 'L24_V041', 'L24_V042', 'L24_V044', 'L24_V045', 
+        'L25_V004', 'L25_V005', 'L25_V008', 'L25_V013', 'L25_V014', 'L25_V017', 'L25_V021', 'L25_V022', 
+        'L25_V025', 'L25_V030', 'L25_V031', 'L25_V034', 'L25_V039', 'L25_V040', 'L25_V043', 'L25_V048', 
+        'L25_V049', 'L25_V052', 'L25_V057', 'L25_V058', 'L25_V061', 'L25_V066', 'L25_V067', 'L25_V070', 
+        'L25_V074', 'L25_V077', 'L25_V078', 'L25_V084', 'L25_V085', 'L25_V088']
+
+    // Function to get URL parameters
+    function getParameterByName(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      console.log(`URL parameters: ${window.location.search}`);
+      return urlParams.get(name);
+    }
+
+    function getTimeFromIndex(frameIdx,cock) {
+      let fps = 25;
+      console.log("video_name", cock);
+      if (fps30Files.includes(cock)){
+        console.log('yes 30fps');
+        fps = 30;
       }
+      
+      console.log(fps);
+      return frameIdx / fps - 0.2;
+    }
 
-      function getTimeFromIndex(frameIdx) {
-        const fps = 25;
-        return frameIdx / fps - 0.2;
-      }
+    // Get the video path and frame index from the URL parameters
+    const videoPath = getParameterByName("videoPath");
+    const frameIdx = getParameterByName("frameIdx");
 
-      // Get the video path and frame index from the URL parameters
-      const videoPath = getParameterByName("videoPath");
-      const frameIdx = getParameterByName("frameIdx");
-      console.log(`videoPath: ${videoPath}`); // Log the videoPath
-      console.log(`frameIdx: ${frameIdx}`);
-      // Set the video source and current time if the path is available
-      if (videoPath) {
-        const videoElement = document.getElementById("video-player");
-        const sourceElement = document.getElementById("video-source");
+    console.log(`videoPath: ${videoPath}`); // Log the videoPath
+    console.log(`frameIdx: ${frameIdx}`);
+    // Set the video source and current time if the path is available
+    if (videoPath) {
+      const videoElement = document.getElementById("video-player");
+      const sourceElement = document.getElementById("video-source");
 
-        sourceElement.src = videoPath;
-        videoElement.load(); 
+      sourceElement.src = videoPath;
+      videoElement.load();
+      videoElement.defaultPlaybackRate = 1.5;
+      videoElement.muted = false;
+      const player = videojs("video-player");
 
-        const player = videojs('video-player');
-        player.ready(function() {
-          player.play();
-        });
+      player.ready(function () {
+        //player.muted = false;
+        player.play();
+      });
 
-        videoElement.addEventListener("loadedmetadata", function () {
-          // Convert frameIdx to integer and calculate the seek time
-          const seekTime = getTimeFromIndex(frameIdx);
-          if (seekTime >= 0 && seekTime <= videoElement.duration) {
-            videoElement.currentTime = seekTime;
+      videoElement.addEventListener("loadedmetadata", function () {
+        // Convert frameIdx to integer and calculate the seek time
+        const seekTime = getTimeFromIndex(frameIdx,videoPath.split('/')[8]);
+        if (seekTime >= 0 && seekTime <= videoElement.duration) {
+          videoElement.currentTime = seekTime;
+        } else {
+          console.error("Calculated time is out of bounds");
+        }
+      });
+
+      document.addEventListener("keydown", function (event) {
+        const time_lapse = 2;
+        event.preventDefault();
+        if (event.key === "ArrowRight") {
+          videoElement.currentTime = Math.min(
+            videoElement.currentTime + time_lapse,
+            videoElement.duration
+          );
+        } else if (event.key === "ArrowLeft") {
+          videoElement.currentTime = Math.max(
+            videoElement.currentTime - time_lapse,
+            0
+          );
+        }
+      });
+
+      let pause = 0;
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === " " || event.code === "Space") {
+          if (!pause) {
+            pause = 1;
+            videoElement.pause();
           } else {
-            console.error("Calculated time is out of bounds");
+            pause = 0;
+            videoElement.play();
           }
+        }
+      });
 
-          videoElement.play();
-        });
+      document.addEventListener("keydown", function (event) {
+        if (event.keyCode === 27) { // ESC buttonn
+          window.close();
+        }
 
-        document.addEventListener('keydown', function(event) {
-          const time_lapse = 2;
-          event.preventDefault();
-          if (event.key === 'ArrowRight') {
-            videoElement.currentTime = Math.min(videoElement.currentTime + time_lapse, videoElement.duration);
-          } else if (event.key === 'ArrowLeft') {
-            videoElement.currentTime = Math.max(videoElement.currentTime - time_lapse, 0);
-          }
-        });
+      });
 
-        let pause = 0;
+    }
+    
+  </script>
+</body>
 
-        document.addEventListener('keydown', function(event) {
-          if (event.key === " " || event.code === 'Space') {
-              if(pause === 0) {
-                pause = 1;
-                videoElement.pause();
-              }
-              else{
-                pause = 0;
-                videoElement.play();
-              }
-          }
-        });
-
-        document.addEventListener('keydown', function(event){
-          if(event.keyCode === 27){
-            window.close();
-          }
-        })
-      }
-    </script>
-  </body>
 </html>

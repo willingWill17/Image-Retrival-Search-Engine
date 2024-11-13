@@ -1,5 +1,11 @@
+/* Modal */
 .modal-dialog {
   top: -15vh;
+}
+
+.modal-body {
+  background: black;
+  border-radius: 8px;
 }
 
 img {
@@ -12,11 +18,20 @@ img {
 }
 
 .gallery img {
+  border: 2px solid black;
   background-color: #ffffff;
   padding: 15px;
   width: 100%;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   cursor: pointer;
+}
+
+.carousel-item img{
+  width: 105%;
+  height: 105%;
+  border: 1.5px solid black;
+  border-radius: 5px;
+  filter: brightness(105%);
 }
 
 #gallery-modal .modal-img {
@@ -47,7 +62,7 @@ img {
 @media (min-width: 768px) {
   .carousel-item {
     margin-right: 0;
-    flex: 0 0 15%;
+    flex: 0 0 10%;
     display: block;
   }
 
@@ -65,7 +80,8 @@ img {
 }
 
 .card img {
-  max-height: 100%;
+  height: 105%;
+  width: 105%;
 }
 
 @media (max-width: 767px) {
@@ -75,5 +91,24 @@ img {
 }
 
 .active {
-  border: 2px solid red;
+  width: 90%;
+  border: 4px solid red;
+}
+
+.img-wrapper {
+  text-align: center;
+}
+
+.img-wrapper p {
+  margin: 0;
+  position: absolute;
+  font-size: 12px;
+  align-items: center;
+  display: flex;
+  background: white;
+  color: black;
+  font-weight: bold;
+  border: 1.5px solid black;
+  height: 30%;
+  bottom: 0px;
 }

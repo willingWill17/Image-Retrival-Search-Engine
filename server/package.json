@@ -1,0 +1,15 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "web socket server",
+  "main": "server.js",
+  "scripts": {
+    "devStart": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@socket.io/admin-ui": "^0.5.1",
+    "socket.io": "^4.7.5"
+  }
+}

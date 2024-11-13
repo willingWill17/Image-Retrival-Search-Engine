@@ -1,253 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="cache-control" content="no-cache" />
-    <meta http-equiv="expires" content="0" />
-    <meta http-equiv="pragma" content="no-cache" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/queryByExample.css" />
-    <link rel="stylesheet" href="css/toggle.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-    />
 
-    <!-- Bootstrap -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="css/bootstrap.css" />
-    <title>Stubborn_Strawberries</title>
-  </head>
+<head>
+  <meta http-equiv="cache-control" content="no-cache" />
+  <meta http-equiv="expires" content="0" />
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <!-- Notification icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/queryByExample.css" />
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <link rel="stylesheet" href="css/notifications.css" />
+  <title>Stubborn_Strawberries</title>
+</head>
 
-  <body>
-    <!-- Offcanvas -->
-    <div
-      class="offcanvas offcanvas-bottom"
-      tabindex="-1"
-      id="offcanvasBottom"
-      aria-labelledby="offcanvasBottomLabel"
-    >
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasBottomLabel">
-          Offcanvas bottom
-        </h5>
+<body>
+  <!-- Offcanvas -->
+  <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel"
+    data-bs-backdrop="static">
+    <div class="offcanvas-header" style="justify-content: center; align-items: center; display: flex;">
+      <h5 class="offcanvas-title" id="offcanvasBottomLabel" ,
+        style="font-weight: bold; font-size: 120%; border: 3px solid black; padding: 5px; border-radius: 10px;">
+        Offcanvas bottom
+      </h5>
+    </div>
+    <div class="offcanvas-body small">
+      <!-- Carousel -->
+      <div id="carouselExampleControls" class="carousel">
+        <div class="carousel-inner" id="carousel-inner"></div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-      <div class="offcanvas-body small">
-        <!-- Carousel -->
-        <div id="carouselExampleControls" class="carousel">
-          <div class="carousel-inner" id="carousel-inner">
-            <div class="carousel-item active">
-              <div class="card">
-                <div class="img-wrapper">
-                  <img
-                    src="C:\Users\GenyoNguyen\Downloads\0001.jpg"
-                    class="d-block w-100 target-img"
-                    alt="..."
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="card">
-                <div class="img-wrapper">
-                  <img
-                    src="C:\Users\GenyoNguyen\Downloads\cannon-in-pixel-art-style-vector.jpg"
-                    class="d-block w-100 target-img"
-                    alt="..."
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="card">
-                <div class="img-wrapper">
-                  <img
-                    src="C:\Users\GenyoNguyen\Downloads\0001.jpg"
-                    class="d-block w-100 target-img"
-                    alt="..."
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="card">
-                <div class="img-wrapper">
-                  <img
-                    src="C:\Users\GenyoNguyen\Downloads\cannon-in-pixel-art-style-vector.jpg"
-                    class="d-block w-100 target-img"
-                    alt="..."
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="card">
-                <div class="img-wrapper">
-                  <img
-                    src="C:\Users\GenyoNguyen\Downloads\0001.jpg"
-                    class="d-block w-100 target-img"
-                    alt="..."
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="card">
-                <div class="img-wrapper">
-                  <img
-                    src="C:\Users\GenyoNguyen\Downloads\cannon-in-pixel-art-style-vector.jpg"
-                    class="d-block w-100 target-img"
-                    alt="..."
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExampleControls"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExampleControls"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+      <!-------------------------------------End of Carousel-------------------------------------->
+    </div>
+  </div>
+  <!-------------------------------------End of Offcanvas-------------------------------------->
+
+  <!-- Modal -->
+  <div class="modal" id="gallery-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+    data-bs-backdrop="false">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-body">
+          <img src="" class="modal-img" id="modal-img" alt="modal img" />
         </div>
-        <!-------------------------------------End of Carousel-------------------------------------->
       </div>
     </div>
-    <!-------------------------------------End of Offcanvas-------------------------------------->
+  </div>
+  <!-------------------------------------End of Modal-------------------------------------->
 
-    <!-- Modal -->
-    <div
-      class="modal"
-      id="gallery-modal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-      data-bs-backdrop="false"
-    >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-          <div class="modal-body">
-            <img
-              src="C:\Users\GenyoNguyen\Downloads\0001.jpg"
-              class="modal-img"
-              id="modal-img"
-              alt="modal img"
-            />
+  <div class="modal" id="mode-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+    data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Welcome to StrawSearch!</h4>
+        </div>
+        <div class="modal-body text-bg-light">
+          <div class="input-group">
+            <span class="input-group-text" id="basic-addon3">Name:</span>
+            <input type="text" placeholder="Your name" id="login-name" class="form-control" aria-label="Session ID"
+              aria-describedby="basic-addon2">
+          </div>
+          <p id="name-warning" class="text-danger" hidden>Must enter your name</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary mode-btn">Practice Mode</button>
+          <button type="button" class="btn btn-primary mode-btn">Competition Mode</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="submit-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Submission</h4>
+        </div>
+        <div class="modal-body text-bg-light">
+          <div class="mb-3">
+            <div class="input-group">
+              <span class="input-group-text" id="basic-addon3">Answer:</span>
+              <input type="text" class="form-control" id="qa-answer" placeholder="Optional"
+                aria-describedby="basic-addon3 basic-addon4">
+              <span class="input-group-text" id="basic-addon3">Video ID:</span>
+              <input type="text" class="form-control" id="video-id" aria-describedby="basic-addon3 basic-addon4"
+                disabled>
+              <span class="input-group-text" id="basic-addon3">Frame Index:</span>
+              <input type="text" class="form-control" id="frame-idx" aria-label="Start" disabled>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="submit-btn" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="check-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Submitted Images</h4>
+        </div>
+        <div class="modal-body text-bg-light">
+          <div class="list-group">
           </div>
         </div>
       </div>
     </div>
-    <!-------------------------------------End of Modal-------------------------------------->
-    <main>
+  </div>
+
+  <main>
+    <div class="headers">
+
       <div class="result-mode">
         <button class="buttonToggle">
           <div class="circle"></div>
         </button>
-        <p>Video Group Search</p>
+        <p>Similarity Search</p>
       </div>
+      <div class="title">
+        <div class="where">
+          <button id="StateOfTemporal">State 1</button>
+        </div>
+        <div>
+          <button id="collection-switch">clip</button>
+        </div>
+        <div>
+          <button id="random-pic"><i class="fa fa-refresh"></i></button>
+        </div>
+        <h1>
+          <img
+            src="http://localhost:3031/mlcv2/WorkingSpace/Personal/longlb/AIC_2024/Image_Retrieval/frontend/image/straw.png"
+            class='straw' alt="" style="width: 100%; height:100%;">
+        </h1>
+        <!-- Accordion -->
+        <div class="accordion" id="accordionExample">
+        </div>
 
-      <form id="request">
-        <div class="bodyGrid">
-          <div class="sidebarGrid" id="searchSidebar" style="width: 310px">
-            <div class="advanced" style="display: block">
-              <div id="searchTab">
-                <div class="scene0" id="canvasTab">
-                  <div class="">
-                    <div id="description_objects0">
-                      <div class="font-large font-bold">
-                        <strong id="sceneDes0" class="font-objects">
-                          Objects &amp; colors of the scene</strong
-                        >
-                      </div>
+        <div class="pagination">
+          <button class="forward"><span class="material-symbols-outlined">
+              arrow_back_ios
+            </span></button>
+          <p>1</p>
+          <button class="backward"><span class="material-symbols-outlined">
+              arrow_forward_ios
+            </span></button>
+        </div>
+      </div>
+    </div>
+
+    <form id="request">
+      <div class="query-box" style='display:none'>
+        <textarea></textarea>
+      </div>
+      <div class="bodyGrid">
+        <div class="sidebarGrid" id="searchSidebar" style="width: 250px">
+          <div class="searchWrap" style="display: block">
+            <div id="searchTab" style="display: block">
+              <div class="scene0" id="canvasTab">
+                <div class="">
+                  <div id="description_objects0">
+                    <div class="font-large font-bold" style="
+                          height: 60%;
+                          justify-content: center;
+                          align-items: center;
+                          display: flex;
+                        ">
+                      <p style="
+                            
+                            font-weight: bold;
+                            font-size: 20px;
+                            margin-bottom: 0.3rem;
+                            text-align: center;
+                          ">
+                        Current scene
+                      </p>
                     </div>
-                    <span class="font-tiny">
-                      <input
-                        type="radio"
-                        id="canvas0_enabled"
-                        name="canvas0"
-                        value="enabled"
-                        checked=""
-                        onchange="setCanvasState(0, this)"
-                      />
-                      <label
-                        for="canvas0_enabled"
-                        style="color: green; font-weight: bold"
-                        >Enabled</label
-                      >
-                      <input
-                        type="radio"
-                        id="canvas0_disabled"
-                        name="canvas0"
-                        value="disabled"
-                        onchange="setCanvasState(0, this)"
-                      />
-                      <label
-                        for="canvas0_disabled"
-                        style="color: gray; font-weight: bold"
-                        >Disabled &nbsp;</label
-                      >
-                    </span>
-                    <span class="font-tiny">
-                      Objects in
-                      <input
-                        type="radio"
-                        id="and0"
-                        name="occur0"
-                        value="and"
-                        checked=""
-                        onchange="setOccur(this, 0)"
-                      />
-                      <label for="and0">AND</label>
-                      <input
-                        type="radio"
-                        id="or0"
-                        name="occur0"
-                        value="or"
-                        onchange="setOccur(this, 0)"
-                      />
-                      <label for="or0">OR</label>
-                    </span>
                   </div>
-                  <div id="block0" style="position: relative; display: block">
-                    <div id="overlay0">
-                      <div align="center" id="text0" style="color: gray">
-                        Disabled
-                      </div>
+                </div>
+                <div id="block0" style="
+                      position: relative;
+                      display: flex;
+                      width: 229px;
+                      border: 3px solid black;
+                      border-radius: 5px;
+                    ">
+                  <div id="overlay0">
+                    <div id="text0" style="color: gray">
+                      Disabled
                     </div>
-                    <div id="inputdiv0">
-                      <div
-                        class="input-container"
-                        style="
+                  </div>
+                  <div id="inputdiv0">
+                    <div class="input-container" style="
                           width: 275px;
                           height: 154px;
                           position: relative;
                           user-select: none;
-                        "
-                      >
-                        <textarea
-                          id="inputBlock0"
-                          name="scene_description"
-                          style="
+                        ">
+                      <textarea id="inputBlock0" name="scene_description" style="
+                            font-weight: 1.5rem;
                             border: 1px solid rgb(0, 0, 0);
-                            width: 275px;
+                            width: 224px;
                             height: 154px;
                             box-sizing: border-box;
                             position: absolute;
@@ -259,176 +234,111 @@
                             padding: 5px;
                             overflow: auto;
                             resize: none; /* Prevent resizing */
-                          "
-                          autofocus
-                        ></textarea>
-                      </div>
+                          " autofocus></textarea>
                     </div>
                   </div>
-                  <div colspan="13" title="Scene Description">
-                    <input
-                      id="annotations0"
-                      type="text"
-                      size="0"
-                      style="display: none"
-                      class="ui-autocomplete-input"
-                      autocomplete="off"
-                    />
-                  </div>
-                  <div
-                    class="advanced"
-                    colspan="13"
-                    id="textareaBlockContainer"
-                    style="display: block"
-                  >
-                    <textarea
-                      id="not0"
-                      class="font-normal"
-                      cols="38"
-                      rows="2"
-                      style="width: 275px; border-radius: 6px"
-                      placeholder="Max Obj: e.g.: 2 person 3 car 0 dog, means at most 2 persons, 3 cars, no dogs"
-                    ></textarea>
-                    <div
-                      id="textual0_container"
-                      colspan="12"
-                      title="Scene Description"
-                    ></div>
-                  </div>
+                </div>
+                <div colspan="13" title="Scene Description">
+                  <input id="annotations0" type="text" size="0" style="display: none" class="ui-autocomplete-input"
+                    autocomplete="off" />
+                </div>
+                <div class="advanced" colspan="13" id="textareaBlockContainer" style="display: block">
+                  <textarea id="object0" oninput="Suggestion('object', 'suggestionObject', '0', uniqueObjects)"
+                    onblur="unfocusSuggestion('suggestionObject', '0')" class="font-normal" cols="38" rows="2" style="
+                        overflow-x: hidden;
+                        overflow-y: hidden;
+                        white-space: nowrap;
+                        width: 229px;
+                        height: 30px;
+                        border-radius: 6px;
+                        margin-top: 7px;
+                        background: #f9f9f9;
+                        background-image: radial-gradient(
+                          #dfdfdf 2%,
+                          transparent 6%
+                        );
+                      " placeholder=" Object Filter..."></textarea>
+                  <div id="suggestionObject0"></div>
+                  <textarea id="color0" oninput="Suggestion('color', 'suggestionColor', '0', uniqueColors)"
+                    onblur="unfocusSuggestion('suggestionColor', '0')" class="font-normal" cols="38" rows="2" style="
+                        overflow-x: hidden;
+                        overflow-y: hidden;
+                        white-space: nowrap;
+                        width: 229px;
+                        height: 30px;
+                        border-radius: 6px;
+                        margin-top: 4px;
+                        background: #f9f9f9;
+                        background-image: radial-gradient(
+                          #dfdfdf 2%,
+                          transparent 6%
+                        );
+                      " placeholder=" Color Filter..."></textarea>
+                  <div id="suggestionColor0"></div>
+                  <textarea id="ocr0" class="font-normal" cols="38" rows="2" style="
+                        overflow-x: hidden;
+                        overflow-y: hidden;
+                        white-space: nowrap;
+                        width: 229px;
+                        height: 30px;
+                        border-radius: 6px;
+                        margin-top: 4px;
+                        background: #f9f9f9;
+                        background-image: radial-gradient(
+                          #dfdfdf 2%,
+                          transparent 6%
+                        );
+                      " placeholder=" OCR Filter..."></textarea>
+                  <div class="suggestionOcr0"></div>
+                  <div id="textual0_container" colspan="12" title="Scene Description"></div>
+                </div>
+              </div>
 
-                  <div class="advanced" style="display: block">
-                    <div class="textareaClean">
-                      <div class="textareaCleanItem">
-                        <button
-                          id="clean0"
-                          class="btn btn-outline-danger btn-sm"
-                          title="clean textarea block 1"
-                        >
-                          <i class="fa fa-trash"></i>
-                        </button>
-                        <button
-                          id="undo0"
-                          class="btn btn-outline-success btn-sm"
-                          title="undo clean textarea block 1"
-                        >
-                          <i class="fa fa-undo"></i>
-                        </button>
-                      </div>
-                      <div class="textareaCleanItem" style="display: none">
-                        <div>
-                          <span title="Black &amp; White Keyframe">
-                            <input
-                              id="isGray0"
-                              type="checkbox"
-                              onchange="setGray(0)"
-                            />
-                          </span>
-                          <span title="Black &amp; White Keyframe">B/W</span>
-                        </div>
-                        <div>
-                          <span title="Color Keyframe">
-                            <input
-                              id="isColor0"
-                              type="checkbox"
-                              onchange="setColor(0)"
-                            />
-                          </span>
-                          <span title="Color Keyframe" class="colorCheckbox">
-                            Color
-                          </span>
-                        </div>
-                      </div>
+              <div class="distance-line"></div>
+
+              <div class="scene1" id="canvasTab">
+                <div class="">
+                  <div id="description_objects1">
+                    <div class="font-large font-bold" style="
+                          height: 50%;
+                          justify-content: center;
+                          align-items: center;
+                          display: flex;
+                        ">
+                      <p style="
+                            
+                            margin-bottom: 0.3rem;
+                            font-weight: bold;
+                            font-size: 20px;
+                            color: #a41318;
+                            text-align: center;
+                          ">
+                        Next scene
+                      </p>
                     </div>
                   </div>
                 </div>
 
-                <div class="scene1" id="canvasTab">
-                  <div class="">
-                    <div id="description_objects1">
-                      <div class="font-large font-bold">
-                        <i id="sceneDes1" class="fa fa-hourglass-end fa-1x">
-                          Objects &amp; color next scene</i
-                        >
-                      </div>
-                    </div>
-                    <span class="font-tiny">
-                      <input
-                        type="radio"
-                        id="canvas1_enabled"
-                        name="canvas1"
-                        value="enabled"
-                        checked=""
-                        onchange="setCanvasState(0, this)"
-                      />
-                      <label
-                        for="canvas1_enabled"
-                        style="color: green; font-weight: bold"
-                        >Enabled</label
-                      >
-                      <input
-                        type="radio"
-                        id="canvas1_disabled"
-                        name="canvas1"
-                        value="disabled"
-                        onchange="setCanvasState(0, this)"
-                      />
-                      <label
-                        for="canvas1_disabled"
-                        style="color: gray; font-weight: bold"
-                        >Disabled &nbsp;</label
-                      >
-                    </span>
-                    <span>
-                      Objects in
-                      <input
-                        type="radio"
-                        id="and1"
-                        name="occur1"
-                        value="and"
-                        checked=""
-                        onchange="setOccur(this, 1)"
-                      />
-                      <label for="and1">AND</label>
-                      <input
-                        type="radio"
-                        id="or1"
-                        name="occur1"
-                        value="or"
-                        onchange="setOccur(this, 1)"
-                      />
-                      <label for="or1">OR</label>
-                    </span>
-                  </div>
-
-                  <div id="block1" style="position: relative; display: block">
-                    <!-- <input
-                      id="textBlock1"
-                      class="inputBlock"
-                      style="display: block"
-                      name="next_scene_description"
-                    > -->
-                    <div id="overlay1">
-                      <div align="center" id="text1" style="color: gray">
-                        Disabled
-                      </div>
-                    </div>
-                    <!-- Replace canvas with textarea -->
-                    <div id="textareadiv1">
-                      <div
-                        class="textarea-container"
-                        style="
+                <div id="block1" style="
+                      position: relative;
+                      display: flex;
+                      width: 229px;
+                      border: 3px solid black;
+                      border-radius: 5px;
+                    ">
+                  <div id="overlay1"></div>
+                  <!-- Replace canvas with textarea -->
+                  <div id="textareadiv1">
+                    <div class="textarea-container" style="
                           width: 275px;
                           height: 154px;
                           position: relative;
                           user-select: none;
-                        "
-                      >
-                        <textarea
-                          id="textareaBlock1"
-                          name="next_scene_description"
-                          style="
+                        ">
+                      <textarea id="inputBlock1" name="next_scene_description" style="
+                            font-weight: 1.5rem;
                             border: 1px solid rgb(0, 0, 0);
-                            width: 275px;
+                            width: 224px;
                             height: 154px;
                             box-sizing: border-box;
                             position: absolute;
@@ -440,136 +350,245 @@
                             padding: 5px;
                             overflow: auto;
                             resize: none; /* Prevent resizing */
-                          "
-                          autofocus
-                        ></textarea>
-                      </div>
+                          " autofocus></textarea>
                     </div>
                   </div>
-                  <div colspan="13" title="Scene Description">
-                    <input
-                      id="annotations1"
-                      type="text"
-                      size="0"
-                      style="display: none"
-                      class="ui-autocomplete-input"
-                      autocomplete="off"
-                    />
-                  </div>
-                  <div
-                    class="advanced"
-                    colspan="13"
-                    id="textareaBlockContainer1"
-                    style="display: block"
-                  >
-                    <textarea
-                      id="not1"
-                      class="font-normal"
-                      cols="38"
-                      rows="2"
-                      style="width: 275px; border-radius: 6px"
-                      placeholder="Max Obj: e.g.: 2 person 3 car 0 dog, means at most 2 persons, 3 cars, no dogs"
-                    ></textarea>
-                    <div
-                      id="textual1_container"
-                      colspan="12"
-                      title="Scene Description"
-                    ></div>
-                  </div>
+                </div>
+                <div colspan="13" title="Scene Description">
+                  <input id="annotations1" type="text" size="0" style="display: none" class="ui-autocomplete-input"
+                    autocomplete="off" />
+                </div>
+                <div class="advanced" colspan="13" id="textareaBlockContainer1" style="display: block">
+                  <textarea id="object1" oninput="Suggestion('object', 'suggestionObject', '1', uniqueObjects)"
+                    onblur="unfocusSuggestion('suggestionObject', '1')" class="font-normal" cols="38" rows="2" style="
+                        overflow-x: hidden;
+                        overflow-y: hidden;
+                        white-space: nowrap;
+                        width: 229px;
+                        height: 30px;
+                        border-radius: 6px;
+                        margin-top: 7px;
+                        background: #f9f9f9;
+                        background-image: radial-gradient(
+                          #dfdfdf 2%,
+                          transparent 6%
+                        );
+                      " placeholder=" Object Filter..."></textarea>
+                  <div id="suggestionObject1"></div>
+                  <textarea id="color1" oninput="Suggestion('color', 'suggestionColor', '1', uniqueColors)"
+                    onblur="unfocusSuggestion('suggestionColor', '1')" class="font-normal" cols="38" rows="2" style="
+                        overflow-x: hidden;
+                        overflow-y: hidden;
+                        white-space: nowrap;
+                        width: 229px;
+                        height: 30px;
+                        border-radius: 6px;
+                        margin-top: 4px;
+                        background: #f9f9f9;
+                        background-image: radial-gradient(
+                          #dfdfdf 2%,
+                          transparent 6%
+                        );
+                      " placeholder=" Color Filter..."></textarea>
+                  <div id="suggestionColor1"></div>
+                  <textarea id="ocr1" class="font-normal" cols="38" rows="2" style="
+                        overflow-x: hidden;
+                        overflow-y: hidden;
+                        white-space: nowrap;
+                        width: 229px;
+                        height: 30px;
+                        border-radius: 6px;
+                        margin-top: 4px;
+                        background: #f9f9f9;
+                        background-image: radial-gradient(
+                          #dfdfdf 2%,
+                          transparent 6%
+                        );
+                      " placeholder=" OCR Filter..."></textarea>
+                  <div id="textual1_container" colspan="12" title="Scene Description"></div>
+                </div>
+              </div>
+              <div id="searchMeta" class="font-normal">
+                <input id="meta" class="font-normal" style="
+                overflow-x: hidden;
+                overflow-y: hidden;
+                white-space: nowrap;
+                width: 235px;
+                height: 24px;
+                border-radius: 6px;
+                margin-top: 1px;
+                background: #f9f9f9;
+                background-image: radial-gradient(
+                  #dfdfdf 2%,
+                  transparent 6%
+                );
+                " placeholder=" E.g: L01_V001, 0"></input>
+              </div>
+            </div>
+            <div class="scene0" id="transcriptTab" style="display: none">
+              <p style="            
+                    font-weight: bold;
+                    font-size: 20px;
+                    margin-bottom: 0.1rem;
+                    text-align: center;
+                  ">ASR Search</p>
+              <div class="input-container" style="
+                width: 230px;
+                height: 165px;
+                position: relative;
+                user-select: none;">
 
-                  <div class="advanced" style="display: block">
-                    <div class="textareaClean">
-                      <div class="textareaCleanItem">
-                        <button
-                          id="clean1"
-                          class="btn btn-outline-danger btn-sm"
-                          title="clean textarea block 1"
-                        >
-                          <i class="fa fa-trash"></i>
-                        </button>
-                        <button
-                          id="undo1"
-                          class="btn btn-outline-success btn-sm"
-                          title="undo clean textarea block 1"
-                        >
-                          <i class="fa fa-undo"></i>
-                        </button>
-                      </div>
-                      <div class="textareaCleanItem" style="display: none">
-                        <div>
-                          <span title="Black &amp; White Keyframe">
-                            <input
-                              id="isGray1"
-                              type="checkbox"
-                              onchange="setGray(1)"
-                            />
-                          </span>
-                          <span title="Black &amp; White Keyframe">B/W</span>
-                        </div>
-                        <div>
-                          <span title="Color Keyframe">
-                            <input
-                              id="isColor1"
-                              type="checkbox"
-                              onchange="setColor(1)"
-                            />
-                          </span>
-                          <span title="Color Keyframe" class="colorCheckbox">
-                            Color
-                          </span>
-                        </div>
-                      </div>
-                    </div>
+                <textarea id="inputBlock3" name="scene_description" style="
+                  font-weight: 1.5rem;
+                  border: 4px solid rgb(0, 0, 0);
+                  width: 224px;
+                  height: 155px;
+                  box-sizing: border-box;
+                  position: absolute;
+                  left: 3px;
+                  top: 0px;
+                  touch-action: none;
+                  user-select: text;
+                  font-size: 14px;
+                  padding: 5px;
+                  overflow: auto;
+                  resize: none; /* Prevent resizing */
+                " autofocus></textarea>
+              </div>
+            </div>
+
+            <div class="scene1" id="image-search" style="display: none;">
+              <div class="">
+                <div id="description_objects1">
+                  <div class="font-large font-bold" style="
+                        height: 50%;
+                        justify-content: center;
+                        align-items: center;
+                        display: flex;
+                      ">
+                    <p style="
+                          
+                          margin-bottom: 0.3rem;
+                          font-weight: bold;
+                          font-size: 20px;
+                          color: #a41318;
+                          text-align: center;
+                        ">
+                      Image Search
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div id="block1" style="
+                    position: relative;
+                    display: flex;
+                    width: 229px;
+                    border: 3px solid black;
+                    border-radius: 5px;
+                  ">
+                <div id="overlay1"></div>
+                <!-- Replace canvas with textarea -->
+                <div id="textareadiv1">
+                  <div class="textarea-container" style="
+                        width: 275px;
+                        height: 154px;
+                        position: relative;
+                        user-select: none;
+                      ">
+                    <textarea id="image-fuck" name="yessir" style="
+                          font-weight: 1.5rem;
+                          border: 1px solid rgb(0, 0, 0);
+                          width: 224px;
+                          height: 154px;
+                          box-sizing: border-box;
+                          position: absolute;
+                          left: 0px;
+                          top: 0px;
+                          touch-action: none;
+                          user-select: text;
+                          font-size: 14px;
+                          padding: 5px;
+                          overflow: auto;
+                          resize: none; /* Prevent resizing */
+                        " autofocus></textarea>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div
-            class="contentGrid"
-            id="content"
-            style="height: calc(100% + 0px)"
-          ></div>
-          <div
-            class="rightSidebarGrid"
-            id="submitted_bar"
-            style="display: none"
-          >
-            <div style="color: green">
-              Submitted: <b id="submitted_num" style="color: red"></b>
-            </div>
-            <div id="avsSubmittedTab" style="display: block"></div>
-          </div>
         </div>
-      </form>
-    </main>
+        <div class="contentGrid" id="content"></div>
+        <div class="nearest-keyframes">
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        document.addEventListener("keydown", function (e) {
-          if (e.key === "`") {
-            window.location.reload(true);
+          <i class='bx bx-x' id="close-near-kf"></i>
+        </div>
+      </div>
+    </form>
+
+
+  </main>
+  <!-- Notifications -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    </div>
+  </div>
+
+  <!-- JQuery -->
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <!-- BootStrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <!-- Socket IO -->
+  <script src="https://cdn.jsdelivr.net/npm/socket.io-client@4.7.5/dist/socket.io.min.js"
+    integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO"
+    crossorigin="anonymous"></script>
+
+  <link href="https://vjs.zencdn.net/8.6.1/video-js.css" rel="stylesheet" />
+  <script src="https://vjs.zencdn.net/8.6.1/video.min.js"></script>
+
+  <!-- JS Files -->
+  <script src="js/bridge.js" type="module"></script>
+  <script src="js/fetching.js" type="module"></script>
+  <script src="js/notification.js" type="module"></script>
+  <!-- <script src="js/request.js" type="module"></script> -->
+  <script src="js/carousel.js" type="module"></script>
+  <script src="js/event_listener.js" type="module"></script>
+  <script src="js/document.js" type="module"></script>
+  <script src="js/client.js" type="module"></script>
+  <script src="js/inputSuggestion.js"></script>
+  <script type="module">
+    import { post } from "./js/request.js";
+    const urlParams = new URLSearchParams(window.location.search);
+    const src = urlParams.get('src');
+    console.log(src);
+    // Step 2: Use the imageUrl as needed (e.g., display it in an <img> tag)
+    let api = ""
+    if (src) {
+      let data = {
+        query: [
+          {
+            textual: "",
+            objects: "",
+            colors: "",
+            ocr: "",
+            imgPath: src,
+            asr: "",
+            metadata: "",
+            collection: 'clip',
           }
-        });
-      });
-    </script>
-    <script src="js/palette.js"></script>
-    <script src="js/document.js" type="module"></script>
+        ]
+      };
+      console.log(data);
+      let jsonData = JSON.stringify(data);
+      post(jsonData, api);
+    }
 
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-    <link href="https://vjs.zencdn.net/8.6.1/video-js.css" rel="stylesheet" />
-    <script src="https://vjs.zencdn.net/8.6.1/video.min.js"></script>
-    <script src="js/request.js" type="module"></script>
-    <script src="js/carousel.js"></script>
-    <script src="js/event_listener.js"></script>
-  </body>
+  </script>
+
+</body>
+
 </html>
